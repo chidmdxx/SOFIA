@@ -1,6 +1,7 @@
 package mx.udlap.settheory;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class SetTheoryOperations {
@@ -8,16 +9,20 @@ public class SetTheoryOperations {
 	{
 		//didn't use List.addall to prevent repeated values, something that doesn't happen in sets
 		List<String> toReturn=new ArrayList<String>();
+		HashSet<String> hs=new HashSet<String>();
+		
 		for (List<String> set : param)
 		{
-			for(String value : set)
+			hs.addAll(set);
+			/*for(String value : set)
 			{
 				if(!toReturn.contains(value))
 				{
 					toReturn.add(value);
 				}
-			}
+			}*/
 		}
+		toReturn.addAll(hs);
 		return toReturn;
 	}
 	
@@ -40,7 +45,6 @@ public class SetTheoryOperations {
 	
 	public static List<String> Complement (List<String> universe, List<String> a)
 	{
-		universe.removeAll(a);
-		return universe;
+		return SetTheoryOperations.Diference(universe, a);
 	}
 }
