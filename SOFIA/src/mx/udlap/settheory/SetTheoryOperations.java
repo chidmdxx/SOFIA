@@ -1,5 +1,5 @@
 package mx.udlap.settheory;
-//esto es de comentari de muestra
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

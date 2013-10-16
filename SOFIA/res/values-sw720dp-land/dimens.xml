@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <resources>
 
     <!--
@@ -7,3 +8,14 @@
     <dimen name="activity_horizontal_margin">128dp</dimen>
 
 </resources>
+=======
+<resources>
+
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    -->
+    <dimen name="activity_horizontal_margin">128dp</dimen>
+
+</resources>
+>>>>>>> 1178cf9d6ad349c685e9d54faa85a5b1e34161e7
