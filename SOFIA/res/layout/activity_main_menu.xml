@@ -84,7 +84,7 @@
         android:layout_alignBottom="@+id/imageButton3"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="31dp"
-        android:src="@drawable/setTheory" />
+        android:src="@drawable/settheory" />
 
     <TextView
         android:id="@+id/textView1"
