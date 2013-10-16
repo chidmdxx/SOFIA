@@ -8,91 +8,101 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainMenu" >
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageButton1"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ejemplos" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageButton1"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ejemplos" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageButton1"
-        android:layout_below="@+id/imageButton1"
-        android:layout_marginTop="14dp"
-        android:src="@drawable/calculator" />
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButton1"
+            android:layout_below="@+id/imageButton1"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/calculator" />
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageButton2"
-        android:layout_alignTop="@+id/imageButton3"
-        android:src="@drawable/ejercios" />
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButton2"
+            android:layout_alignTop="@+id/imageButton3"
+            android:src="@drawable/ejercios" />
 
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="11dp"
-        android:layout_toLeftOf="@+id/imageButton2"
-        android:src="@drawable/teoria" />
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="11dp"
+            android:layout_toLeftOf="@+id/imageButton2"
+            android:src="@drawable/teoria" />
 
-    <ImageButton
-        android:id="@+id/ImageButton01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageButton3"
-        android:layout_below="@+id/imageButton3"
-        android:layout_marginTop="49dp"
-        android:src="@drawable/teoria" />
+        <ImageButton
+            android:id="@+id/ImageButton01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButton3"
+            android:layout_below="@+id/imageButton3"
+            android:layout_marginTop="49dp"
+            android:src="@drawable/teoria" />
 
-    <ImageButton
-        android:id="@+id/ImageButton02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ImageButton01"
-        android:layout_toRightOf="@+id/imageButton1"
-        android:src="@drawable/ejemplos" />
+        <ImageButton
+            android:id="@+id/ImageButton02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ImageButton01"
+            android:layout_toRightOf="@+id/imageButton1"
+            android:src="@drawable/ejemplos" />
 
-    <ImageButton
-        android:id="@+id/ImageButton03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ImageButton01"
-        android:layout_below="@+id/ImageButton01"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/calculator" />
+        <ImageButton
+            android:id="@+id/ImageButton03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ImageButton01"
+            android:layout_below="@+id/ImageButton01"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/calculator" />
 
-    <ImageButton
-        android:id="@+id/ImageButton04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ImageButton03"
-        android:layout_toRightOf="@+id/imageButton1"
-        android:src="@drawable/ejercios" />
+        <ImageButton
+            android:id="@+id/ImageButton04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ImageButton03"
+            android:layout_toRightOf="@+id/imageButton1"
+            android:src="@drawable/ejercios" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageButton3"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="31dp"
-        android:src="@drawable/settheory" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageButton3"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="31dp"
+            android:src="@drawable/settheory" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageButton3"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_marginLeft="12dp"
-        android:text="Teoría de conjuntos" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageButton3"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_marginLeft="12dp"
+            android:text="Teoría de conjuntos" />
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ImageButton01"
+            android:layout_marginTop="29dp"
+            android:layout_toLeftOf="@+id/textView1"
+            android:numColumns="3" >
+        </GridView>
 
 </RelativeLayout>
