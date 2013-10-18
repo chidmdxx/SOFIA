@@ -7,8 +7,6 @@ import android.app.Activity;
 import android.view.Menu;
 import android.widget.EditText;
 
-import mx.udlap.settheory.SetTheoryOperations;
-
 public class Solve_solver extends Activity {
 
 	@Override
@@ -17,7 +15,6 @@ public class Solve_solver extends Activity {
 		List<String> conjuntoA=new ArrayList<String>();
 		List<String> conjuntoB=new ArrayList<String>();
 		List<String> conjuntoU=new ArrayList<String>();
-		List<String> resultado;
 		
 		setContentView(R.layout.activity_solve_solver);
 		// Obtenemos los datos de nuestra otra actividad y lo asginamos al EditText (Resultado)
@@ -35,18 +32,9 @@ public class Solve_solver extends Activity {
 		 }
 		 StringTokenizer tokensb;
 		 tokensb = new StringTokenizer(conjuntob,",");
-		 while(tokensb.hasMoreTokens())
-		 {
-			 conjuntoB.add(tokensb.nextToken());
-		 }
 		 StringTokenizer tokensu;
 		 tokensu = new StringTokenizer(conjuntouniverso,",");
-		 while(tokensu.hasMoreTokens())
-		 {
-			 conjuntoU.add(tokensu.nextToken());
-		 }
 		 
-		 resultado=SetTheoryOperations.Diference(conjuntoA, conjuntoB);
 		 EditText textconjuntoa = (EditText) findViewById(R.id.conjuntoA);
 		 
 		 
