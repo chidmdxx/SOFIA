@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class SetTheoryOperations {
+	public static List<String> Resultado;
 	public static List<String> Union (List<List<String>> param)
 	{
 		//didn't use List.addall to prevent repeated values, something that doesn't happen in sets
@@ -23,12 +24,14 @@ public class SetTheoryOperations {
 			}*/
 		}
 		toReturn.addAll(hs);
+		Resultado=toReturn;
 		return toReturn;
 	}
 	
 	public static List<String> Diference (List<String> minuend, List<String> subtrahend )
 	{
 		minuend.removeAll(subtrahend);
+		Resultado=minuend;
 		return minuend;
 	}
 	
@@ -40,6 +43,7 @@ public class SetTheoryOperations {
 		{
 			toReturn.retainAll(set);
 		}
+		Resultado=toReturn;
 		return toReturn;
 	}
 	
