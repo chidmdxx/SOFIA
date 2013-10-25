@@ -36,9 +36,9 @@
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="46dp"
-        android:height="@dimen/Botones_pequenos"
+        android:height="50dp"
         android:text="@string/Solve"
-        android:width="@dimen/Botones_pequenos_ancho" />
+        android:width="70dp" />
 
     <Button
         android:id="@+id/Exercises"

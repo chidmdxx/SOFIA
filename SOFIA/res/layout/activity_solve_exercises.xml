@@ -56,14 +56,6 @@
         android:layout_marginTop="16dp"
         android:text="Set b:" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/conjuntoB"
-        android:layout_centerVertical="true"
-        android:text="Universe: " />
-
     <EditText
         android:id="@+id/universo"
         android:layout_width="wrap_content"
@@ -73,14 +65,68 @@
         android:ems="10" />
 
     <Button
+        android:id="@+id/diferencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/union"
+        android:layout_below="@+id/union"
+        android:layout_marginTop="18dp"
+        android:height="@dimen/Botones_pequenos"
+        android:minWidth="48dp"
+        android:text="/"
+        android:width="@dimen/Botones_pequenos_ancho" />
+
+    <Button
+        android:id="@+id/a_complemento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/diferencia"
+        android:layout_alignLeft="@+id/interseccion"
+        android:height="@dimen/Botones_pequenos"
+        android:minWidth="48dp"
+        android:text="A&apos;"
+        android:width="@dimen/Botones_pequenos_ancho" />
+
+    <Button
         android:id="@+id/union"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/universo"
+        android:layout_alignRight="@+id/textView4"
         android:layout_below="@+id/universo"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
-        android:text="U" />
+        android:layout_marginTop="15dp"
+        android:height="@dimen/Botones_pequenos"
+        android:text="U"
+        android:width="@dimen/Botones_pequenos_ancho" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/conjuntoB"
+        android:layout_centerVertical="true"
+        android:text="Universe: " />
+
+    <Button
+        android:id="@+id/interseccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/diferencia"
+        android:layout_centerHorizontal="true"
+        android:height="@dimen/Botones_pequenos"
+        android:minWidth="48dp"
+        android:text="∩"
+        android:width="@dimen/Botones_pequenos_ancho" />
+
+    <Button
+        android:id="@+id/b_complemento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/diferencia"
+        android:layout_alignRight="@+id/universo"
+        android:height="@dimen/Botones_pequenos"
+        android:minWidth="48dp"
+        android:text="B&apos;"
+        android:width="@dimen/Botones_pequenos_ancho" />
 
 </RelativeLayout>

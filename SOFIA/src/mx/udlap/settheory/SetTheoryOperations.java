@@ -1,4 +1,4 @@
-package mx.udlap.settheory;
+package com.example.sofia;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -6,6 +6,18 @@ import java.util.List;
 
 public class SetTheoryOperations {
 	public static List<String> Resultado;
+	
+	public static List<String> Union (List<String> A, List<String>B)
+	{
+		List<String> toReturn=new ArrayList<String>();
+		HashSet<String> hs=new HashSet<String>();
+		hs.addAll(A);	
+		hs.addAll(B);	
+		toReturn.addAll(hs);
+		Resultado=toReturn;
+		return toReturn;
+	}
+	
 	public static List<String> Union (List<List<String>> param)
 	{
 		//didn't use List.addall to prevent repeated values, something that doesn't happen in sets
@@ -35,6 +47,15 @@ public class SetTheoryOperations {
 		return minuend;
 	}
 	
+	public static List<String> Intersection (List<String> A, List<String> B)
+	{
+		List<String> toReturn=new ArrayList<String>();
+		toReturn.addAll(A); // adds initial values to the result set
+		toReturn.retainAll(B);
+		Resultado=toReturn;
+		return toReturn;
+	}
+	
 	public static List<String> Intersection (List<List<String>> param)
 	{
 		List<String> toReturn=new ArrayList<String>();
@@ -49,6 +70,8 @@ public class SetTheoryOperations {
 	
 	public static List<String> Complement (List<String> universe, List<String> a)
 	{
-		return SetTheoryOperations.Diference(universe, a);
+		universe.removeAll(a);
+		Resultado=universe;
+		return universe;
 	}
 }

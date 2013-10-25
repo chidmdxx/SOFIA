@@ -9,7 +9,7 @@
     <dimen name="Titulo_ancho">300px</dimen>
     <dimen name="Description">350px</dimen>
     <dimen name="Titulo_size">50px</dimen>
-    <dimen name="Botones_pequenos">60px</dimen>
-    <dimen name="Botones_pequenos_ancho">130px</dimen>
+    <dimen name="Botones_pequenos">50sp</dimen>
+    <dimen name="Botones_pequenos_ancho">50sp</dimen>
 
 </resources>
