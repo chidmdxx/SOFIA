@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <resources>
 
     <string name="app_name">Sofia</string>
@@ -17,15 +16,6 @@
     <string name="Theory_description">jhjfrhfjehfedjfehdfhefj f jfhe dfhefjheijfeh fijefhe fehf ih djh ejfhed fhedjf ehd       fh efh eifh efhriufhe fue fheufhefieufhefuiejhfefu efhefuh eh eudih   fe df hediufh efheufhef eiufh eifh euif hefiueh fer uer fuerfehrf uerfheiufh efuher fiuer fher fehru fher eiurh eiuh euirh eiuh euihuerheruherui        heuirhriuerhteruther tuhereh egheruihriutheriuther tuerhtuerhteruthert erth e</string>
     <string name="Solve">Solve</string>
     <string name="See_answer">See answer</string>
-
-</resources>
-=======
-<resources>
-
-    <string name="app_name">SOFIA</string>
     <string name="title_activity_main_menu">MainMenu</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
 
 </resources>
->>>>>>> 1178cf9d6ad349c685e9d54faa85a5b1e34161e7

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.widget.EditText;
+import mx.udlap.sofia.R;
 
 import mx.udlap.settheory.SetTheoryOperations;
 

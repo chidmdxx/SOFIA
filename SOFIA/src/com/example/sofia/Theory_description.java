@@ -3,6 +3,7 @@ package com.example.sofia;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import mx.udlap.sofia.R;
 
 public class Theory_description extends Activity {
 

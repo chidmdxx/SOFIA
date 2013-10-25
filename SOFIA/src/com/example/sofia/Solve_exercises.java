@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import mx.udlap.sofia.R;
 
 public class Solve_exercises extends Activity {
 
