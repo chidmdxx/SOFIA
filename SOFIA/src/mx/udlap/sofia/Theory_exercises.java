@@ -1,4 +1,4 @@
-package com.example.sofia;
+package mx.udlap.sofia;
 
 import android.os.Bundle;
 import android.app.Activity;

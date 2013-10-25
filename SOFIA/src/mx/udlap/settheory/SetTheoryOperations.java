@@ -1,4 +1,4 @@
-package com.example.sofia;
+package mx.udlap.settheory;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -42,9 +42,10 @@ public class SetTheoryOperations {
 	
 	public static List<String> Diference (List<String> minuend, List<String> subtrahend )
 	{
-		minuend.removeAll(subtrahend);
-		Resultado=minuend;
-		return minuend;
+		List<String> toReturn=new ArrayList<String>(minuend);
+		toReturn.removeAll(subtrahend);
+		Resultado=toReturn;
+		return toReturn;
 	}
 	
 	public static List<String> Intersection (List<String> A, List<String> B)
@@ -70,8 +71,6 @@ public class SetTheoryOperations {
 	
 	public static List<String> Complement (List<String> universe, List<String> a)
 	{
-		universe.removeAll(a);
-		Resultado=universe;
-		return universe;
+		return SetTheoryOperations.Diference(universe, a);
 	}
 }

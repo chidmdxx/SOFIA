@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="mx.udlap.sofia.MainMenu"
-            android:label="@string/title_activity_main_menu" >
+            android:label="Menu" >
         </activity>
     </application>
 

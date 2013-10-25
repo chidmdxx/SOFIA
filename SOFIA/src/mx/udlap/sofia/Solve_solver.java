@@ -1,4 +1,4 @@
-package com.example.sofia;
+package mx.udlap.sofia;
 
 import java.util.*;
 
