@@ -1,4 +1,4 @@
-package com.example.sofia;
+/*package com.example.sofia;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -20,3 +20,4 @@ public class Seeanswer_exercises extends Activity {
 	}
 
 }
+*/

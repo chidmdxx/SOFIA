@@ -1,4 +1,4 @@
-package com.example.sofia;
+/*package com.example.sofia;
 
 import java.util.*;
 
@@ -30,3 +30,4 @@ public class Solve_solver extends Activity {
 	}
 
 }
+*/

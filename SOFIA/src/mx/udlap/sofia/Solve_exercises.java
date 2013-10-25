@@ -1,4 +1,4 @@
-package com.example.sofia;
+/*package com.example.sofia;
 
 import java.util.StringTokenizer;
 
@@ -128,4 +128,4 @@ but4.setOnClickListener(new View.OnClickListener() {
 	}
 
 }
-
+*/

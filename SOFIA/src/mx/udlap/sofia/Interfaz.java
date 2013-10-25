@@ -1,4 +1,4 @@
-package com.example.sofia;
+/*package com.example.sofia;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -56,3 +56,4 @@ public class Interfaz extends Activity {
 	}
 
 }
+*/
