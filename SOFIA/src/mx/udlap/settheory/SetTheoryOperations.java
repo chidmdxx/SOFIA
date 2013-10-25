@@ -1,4 +1,4 @@
-package com.example.sofia;
+package mx.udlap.settheory;
 
 import java.util.ArrayList;
 import java.util.HashSet;
