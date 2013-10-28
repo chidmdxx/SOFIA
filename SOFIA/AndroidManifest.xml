@@ -22,6 +22,10 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.sofia.Theory_description"></activity>
+        <activity android:name="com.example.sofia.Seeanswer_exercises">
+        </activity>
+        <activity android:name="com.example.sofia.Solve_exercises"></activity>
+        <activity android:name="com.example.sofia.Solve_solver"></activity>
         
     </application>
 
