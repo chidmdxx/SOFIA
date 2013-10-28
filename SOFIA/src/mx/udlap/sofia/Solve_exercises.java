@@ -1,5 +1,6 @@
 /*package com.example.sofia;
 
+
 import java.util.StringTokenizer;
 
 import android.os.Bundle;
@@ -11,8 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import java.util.*;
-
-import com.example.sofia.SetTheoryOperations;; //da las operaciones
+import mx.udlap.settheory.*;
 
 public class Solve_exercises extends Activity {
 
