@@ -1,7 +1,7 @@
 package com.example.sofiaTriangulo;
 
 
-import com.example.sofia.R;
+import mx.udlap.sofia.R;
 
 import android.os.Bundle;
 import android.annotation.SuppressLint;
@@ -26,7 +26,7 @@ public class Triangulo extends Activity {
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_triangle);
     
     etiquetaRespuesta = (TextView) findViewById(R.id.textView1);
     bRespuesta = (Button) findViewById(R.id.button1);
@@ -52,12 +52,12 @@ public class Triangulo extends Activity {
 
             case R.id.button3: 
                 // doStuff
-                setContentView(R.layout.triangulo);
+                setContentView(R.layout.activity_triangle);
                 break;
-            case R.id.button4: 
+            /*case R.id.button3: 
                 // doStuff
-                setContentView(R.layout.triangulo);
-                break;	
+                setContentView(R.layout.activity_triangle);
+                break;	*/
 			}
 		}
     	 
@@ -182,11 +182,11 @@ public class Triangulo extends Activity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    //@Override
+   /* public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }*/
     
 }
