@@ -13,11 +13,14 @@ public class MainMenu extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_menu);
+		
+		/*
 		final ImageButton conjuntos_teoria = (ImageButton) findViewById(R.id.imageButton1);
 		final ImageButton conjuntos_ejercicios = (ImageButton) findViewById(R.id.imageButton2);
 		final ImageButton conjuntos_solver = (ImageButton) findViewById(R.id.imageButton3);
 		final ImageButton conjuntos_resueltos = (ImageButton) findViewById(R.id.imageButton4);
 
+		
 		conjuntos_teoria.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -28,7 +31,8 @@ public class MainMenu extends Activity {
 				// finish();
 			}
 		});
-
+		
+		
 		conjuntos_ejercicios.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -38,7 +42,7 @@ public class MainMenu extends Activity {
 				startActivity(sendTo);
 				// finish();
 			}
-		});
+		});	
 		
 		conjuntos_solver.setOnClickListener(new View.OnClickListener() {
 
@@ -61,6 +65,8 @@ public class MainMenu extends Activity {
 				// finish();
 			}
 		});
+		
+		*/
 
 	}
 
@@ -71,5 +77,5 @@ public class MainMenu extends Activity {
 		return true;
 	}
 
-}// hola!1!!
-// hola!2¡
+}
+
