@@ -23,5 +23,15 @@
     <string name="version2">version2</string>
     <string name="secuencia">secuencia</string>
     <string name="triangulo">triangulo</string>
+    <string name="distancias">distancias</string>
+    <string name="grados">grados</string>
+    <string name="a">a</string>
+    <string name="b">b</string>
+    <string name="A">A</string>
+    <string name="c">c</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="version_1">version_1</string>
+    <string name="button">button</string>
 
 </resources>

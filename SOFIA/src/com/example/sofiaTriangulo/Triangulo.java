@@ -54,10 +54,10 @@ public class Triangulo extends Activity {
                 // doStuff
                 setContentView(R.layout.activity_triangle);
                 break;
-            /*case R.id.button3: 
+            case R.id.button4: 
                 // doStuff
                 setContentView(R.layout.activity_triangle);
-                break;	*/
+                break;
 			}
 		}
     	 
