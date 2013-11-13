@@ -36,6 +36,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="46dp"
+        android:layout_toLeftOf="@+id/Exercises"
         android:height="50dp"
         android:text="@string/Solve"
         android:width="70dp" />
@@ -46,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/theory"
         android:layout_alignBottom="@+id/theory"
-        android:layout_alignRight="@+id/textView2"
+        android:layout_alignRight="@+id/textView1"
         android:height="@dimen/Botones_pequenos"
         android:text="@string/See_answer" />
 

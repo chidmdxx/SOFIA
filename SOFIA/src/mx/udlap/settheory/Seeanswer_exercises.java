@@ -1,9 +1,10 @@
-package com.example.sofia;
+package mx.udlap.settheory;
+
+import mx.udlap.sofia.R;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import mx.udlap.sofia.R;
 
 public class Seeanswer_exercises extends Activity {
 
