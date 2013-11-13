@@ -37,5 +37,6 @@
     <string name="Equation_title">Ecuaciones</string>
     <string name="Equation_hint">2x^2+5x-10=0</string>
     <string name="Equation_menu_title">Menu Ecuaciones</string>
+    <string name="borrar_valores">Borrar Valores</string>
 
 </resources>

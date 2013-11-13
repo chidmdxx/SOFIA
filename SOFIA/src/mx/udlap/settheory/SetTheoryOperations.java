@@ -21,7 +21,7 @@ public class SetTheoryOperations {
 		hs.addAll(B);	
 		toReturn.addAll(hs);
 		Resultado=toReturn;
-		Operacion=Operacion+A+" union " +B+"\n";
+		Operacion=Operacion+A.toString()+" union " +B.toString()+"\n";
 		return toReturn;
 	}
 	
@@ -62,7 +62,7 @@ public class SetTheoryOperations {
 		toReturn.addAll(A); // adds initial values to the result set
 		toReturn.retainAll(B);
 		Resultado=toReturn;
-		Operacion=Operacion+A+" intersección " +B+"\n";
+		Operacion=Operacion+A.toString()+" intersección " +B.toString()+"\n";
 		return toReturn;
 	}
 	
@@ -83,7 +83,7 @@ public class SetTheoryOperations {
 		List<String> toReturn=new ArrayList<String>(U);
 		toReturn.removeAll(A);
 		Resultado=toReturn;
-		Operacion=Operacion+A+" complemento, con universo " +U+"\n";
+		Operacion=Operacion+A.toString()+" complemento, con universo " +U.toString()+"\n";
 		return toReturn;
 	}
 }
