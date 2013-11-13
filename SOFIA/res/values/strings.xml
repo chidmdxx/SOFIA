@@ -32,5 +32,10 @@
     <string name="version_1">version_1</string>
     <string name="button">button</string>
     <string name="version1">version1</string>
+    <string name="Step_by_step">Paso a paso</string>
+    <string name="Graphic">Graficar</string>
+    <string name="Equation_title">Ecuaciones</string>
+    <string name="Equation_hint">2x^2+5x-10=0</string>
+    <string name="Equation_menu_title">Menu Ecuaciones</string>
 
 </resources>

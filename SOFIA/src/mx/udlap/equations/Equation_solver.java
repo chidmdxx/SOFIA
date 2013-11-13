@@ -23,7 +23,6 @@ public class Equation_solver extends Activity {
 		Button solver = (Button) findViewById(R.id.equation_solverB);
 		Button graphic = (Button) findViewById(R.id.equation_graphicB);
 		final EditText eq = (EditText) findViewById(R.id.ecuation_textField);
-		final TextView xy = (TextView) findViewById(R.id.ecuation_xy);
 		
 		
 		//Click listener
@@ -58,7 +57,7 @@ public class Equation_solver extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.ecuations, menu);
+		//getMenuInflater().inflate(R.menu.ecuations, menu);
 		return true;
 	}
 
