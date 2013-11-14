@@ -194,26 +194,30 @@ public class EquationMethods {
        result +=("\n");
        result +=("Aplicando Formula general:\n"); 
        //result += ("        --------------------------------------\n");
-       result +=("x = - ("+b+") +- \u221A ("+b+") ** 2 -4("+a+") ("+c+")\n");
-       result +=("           ------------------------\n");
-       result +=("               2 ("+a+")\n");
+       result +=("x = - ("+b+") +- \u221A ("+b+")^2 -4("+a+") ("+c+")\n");
+       result +=("         -------------------------------\n");
+       result +=("                        2 ("+a+")\n");
+       result +=("\n");
        
        result +=("Paso 1:\n");
        result +=("x = - ("+b+") +- \u221A ("+b1+")  -4("+ac+")\n");
-       result +=("           ------------------\n");
-       result +=("                ("+a1+")\n");
+       result +=("         ------------------------\n");
+       result +=("                      ("+a1+")\n");
+       result +=("\n");
        
        
        result +=("Paso 2:\n");
        result +=("x = - ("+b+") +- \u221A ("+b1+") + ("+ac1+")\n");
-       result +=("                 --------------------------\n");
-       result +=("                         ("+a1+")\n");
+       result +=("        --------------------------\n");
+       result +=("                       ("+a1+")\n");
        result +=("\n");
+      
        
        result +=("Paso 3:\n");
        result +=("x = - ("+b+") +- \u221A ("+b2+")\n");
-       result +=("                     -----------------\n");
-       result +=("                     ("+a1+")\n");
+       result +=("        -----------------\n");
+       result +=("                 ("+a1+")\n");
+       result +=("\n");
        
        if(b2 < 0){
        	//b2 = -b2;
@@ -221,11 +225,11 @@ public class EquationMethods {
     	
     	   result +=("Paso 4:\n");
            result +=("x1 = - ("+b+") + ("+b2+") i\n");
-           result +=("                ----------\n");
+           result +=("           ------------\n");
            result +=("                 ("+a1+")\n");
            
            result +=("x2 = - ("+b+") - ("+b2+") i\n");
-           result +=("                 ----------\n");
+           result +=("           ------------\n");
            result +=("                 ("+a1+")\n");
            result +=("\n");
            
@@ -241,29 +245,34 @@ public class EquationMethods {
        else{
        result +=("Paso 4:\n");
        result +=("x = - ("+b+") +- ("+sq+")\n");
-       result +=("               -------------\n");
+       result +=("          --------------\n");
        result +=("                ("+a1+")\n");
        result +=("\n");
        
        result +=("Paso 5:\n");
        result +=("x1 = - ("+b+") + ("+sq+")\n");
-       result +=("                ----------\n");
+       result +=("           --------------\n");
        result +=("                 ("+a1+")\n");
+       result +=("\n");
        
        result +=("x2 = - ("+b+") - ("+sq+")\n");
-       result +=("                 ----------\n");
+       result +=("           --------------\n");
        result +=("                 ("+a1+")\n");
+       result +=("\n");
        
        result +=("Paso 6:\n");
        result +=("x1 =  ("+x1+")\n");
-       result +=("     ----------\n");
-       result +=("      ("+a1+")\n");
+       result +=("          ------\n");
+       result +=("           ("+a1+")\n");
+       result +=("\n");
        
-       result +=("x2 = ("+x2+")\n");
-       result +=("     ----------\n");
-       result +=("      ("+a1+")\n");
+       result +=("x2 =  ("+x2+")\n");
+       result +=("          ------\n");
+       result +=("           ("+a1+")\n");
+       result +=("\n");
        
        result +=("Resultado:\n");
+       result +=("\n");
        result +=("x1 =  ("+xf1+")\n");
        result +=("x2 = ("+xf2+")\n");
        
