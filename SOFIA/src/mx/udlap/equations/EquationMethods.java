@@ -132,9 +132,16 @@ public class EquationMethods {
         if(splitPlus.length < 1 || (splitPlus.length == 1 && splitPlus[0].indexOf('x') == -1)) throw new NumberFormatException();
             for(int i = 0; i < splitPlus.length; i++) {
                 if(splitPlus[i].indexOf("x^2") >= 0) {
+                	if (splitPlus[i].indexOf("x^2") == 0){
+                        //System.out.println("entro1");
+                        result[0] = 1;
+                     }
+                	 
+                	else{
                         String[] splitX2 = splitPlus[i].split("x");
                         if(splitX2.length != 2) throw new NumberFormatException();
                         result[0] = new Integer(splitX2[0]);
+                	}
                 }
                 else if(splitPlus[i].indexOf("x^1") >= 0) {
                     String[] splitX = splitPlus[i].split("x");
