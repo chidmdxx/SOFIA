@@ -175,7 +175,7 @@ public class EquationMethods {
         int b2 = b1+ac1;
        
         
-        double  bI = -b/a1;	
+        float  bI = -b/a1;	
         String.format("%.3g%n", bI);
         double sq = Math.sqrt(b2);
         double x1 = (-1 * b) + sq;
@@ -190,31 +190,33 @@ public class EquationMethods {
        // double root2 = (-b -  temp1) / (2*a) ;
         
         
-       String result = ("Ecuacion: "+ecuacion+"\n\n"); 
+       String result = ("Ecuacion: "+ecuacion+"\n"); 
+       //result+=(a+"x\u00b2"+b+"x"+c+"= 0");
        result +=("\n");
-       result +=("Aplicando Formula general:\n"); 
+       result +=("Aplicando Formula general:\n\n"); 
        //result += ("        --------------------------------------\n");
-       result +=("x = - ("+b+") +- \u221A ("+b+")^2 -4("+a+") ("+c+")\n");
-       result +=("         -------------------------------\n");
+       result +=("x = - ("+b+")	 \u00b1 \u221A "+b+"\u00b2 -4("+a+") ("+c+")\n");
+       result +=("         -----------------------------\n");
        result +=("                        2 ("+a+")\n");
+       
        result +=("\n");
        
-       result +=("Paso 1:\n");
-       result +=("x = - ("+b+") +- \u221A ("+b1+")  -4("+ac+")\n");
+       result +=("Paso 1:\n\n");
+       result +=("x = - ("+b+") \u00b1 \u221A "+b1+"  -4("+ac+")\n");
        result +=("         ------------------------\n");
        result +=("                      ("+a1+")\n");
        result +=("\n");
        
        
-       result +=("Paso 2:\n");
-       result +=("x = - ("+b+") +- \u221A ("+b1+") + ("+ac1+")\n");
+       result +=("Paso 2:\n\n");
+       result +=("x = - ("+b+") \u00b1 \u221A "+b1+" + ("+ac1+")\n");
        result +=("        --------------------------\n");
        result +=("                       ("+a1+")\n");
        result +=("\n");
       
        
-       result +=("Paso 3:\n");
-       result +=("x = - ("+b+") +- \u221A ("+b2+")\n");
+       result +=("Paso 3:\n\n");
+       result +=("x = - ("+b+") \u00b1 \u221A ("+b2+")\n");
        result +=("        -----------------\n");
        result +=("                 ("+a1+")\n");
        result +=("\n");
@@ -223,7 +225,7 @@ public class EquationMethods {
        	//b2 = -b2;
     	
     	
-    	   result +=("Paso 4:\n");
+    	   result +=("Paso 4:\n\n");
            result +=("x1 = - ("+b+") + ("+b2+") i\n");
            result +=("           ------------\n");
            result +=("                 ("+a1+")\n");
@@ -234,7 +236,7 @@ public class EquationMethods {
            result +=("\n");
            
            
-           result +=("Resultado:\n");
+           result +=("Resultado:\n\n");
            result +=("x1 = - ("+bI+") + ("+b2+") i\n");
            result +=("x2 = - ("+bI+") - ("+b2+") i\n");
           
@@ -243,13 +245,13 @@ public class EquationMethods {
        }
        
        else{
-       result +=("Paso 4:\n");
-       result +=("x = - ("+b+") +- ("+sq+")\n");
+       result +=("Paso 4:\n\n");
+       result +=("x = - ("+b+") \u00b1 ("+sq+")\n");
        result +=("          --------------\n");
        result +=("                ("+a1+")\n");
        result +=("\n");
        
-       result +=("Paso 5:\n");
+       result +=("Paso 5:\n\n");
        result +=("x1 = - ("+b+") + ("+sq+")\n");
        result +=("           --------------\n");
        result +=("                 ("+a1+")\n");
@@ -260,7 +262,7 @@ public class EquationMethods {
        result +=("                 ("+a1+")\n");
        result +=("\n");
        
-       result +=("Paso 6:\n");
+       result +=("Paso 6:\n\n");
        result +=("x1 =  ("+x1+")\n");
        result +=("          ------\n");
        result +=("           ("+a1+")\n");
@@ -271,7 +273,7 @@ public class EquationMethods {
        result +=("           ("+a1+")\n");
        result +=("\n");
        
-       result +=("Resultado:\n");
+       result +=("Resultado:\n\n");
        result +=("\n");
        result +=("x1 =  ("+xf1+")\n");
        result +=("x2 = ("+xf2+")\n");
