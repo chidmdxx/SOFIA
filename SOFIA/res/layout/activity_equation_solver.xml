@@ -40,7 +40,7 @@
         android:ems="10"
         android:gravity="center_vertical|center"
         android:hint="@string/Equation_hint"
-        android:text="1x^2-6x+8=0" />
+        android:text="2x^2-3x+8=0" />
 
     <Button
         android:id="@+id/equation_graphicB"

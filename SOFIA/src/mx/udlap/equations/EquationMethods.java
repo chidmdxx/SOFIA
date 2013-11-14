@@ -1,5 +1,8 @@
 package mx.udlap.equations;
 
+import android.annotation.SuppressLint;
+
+@SuppressLint("DefaultLocale")
 public class EquationMethods {
 	
 	public String solver(String equation){
@@ -105,6 +108,7 @@ public class EquationMethods {
 	
 	static Integer[] parsePolynomial(String input) {
         if(input.indexOf("x") == -1) throw new NumberFormatException();
+        if(input.indexOf("=") == -1) throw new NumberFormatException();
         Integer[] result = new Integer[10];
         //remove all whitespaces
         input = input.replaceAll(" ", "");
@@ -169,11 +173,16 @@ public class EquationMethods {
         int a1 = a *2;
         int ac1 = -4*ac;
         int b2 = b1+ac1;
+       
+        
+        double  bI = -b/a1;	
+        String.format("%.3g%n", bI);
         double sq = Math.sqrt(b2);
         double x1 = (-1 * b) + sq;
         double x2 = (-1 * b) - sq;
         double xf1 = x1 /a1;
         double xf2= x2 /a1;
+        
         
        // double temp1 = Math.sqrt(b * b - 4 * a * c);
 
@@ -181,8 +190,9 @@ public class EquationMethods {
        // double root2 = (-b -  temp1) / (2*a) ;
         
         
-       String result = ("Aplicando Formula general:\n"); 
-       result +=("Ecuacion: "+ecuacion+"\n\n"); 
+       String result = ("Ecuacion: "+ecuacion+"\n\n"); 
+       result +=("\n");
+       result +=("Aplicando Formula general:\n"); 
        //result += ("        --------------------------------------\n");
        result +=("x = - ("+b+") +- \u221A ("+b+") ** 2 -4("+a+") ("+c+")\n");
        result +=("           ------------------------\n");
@@ -205,10 +215,35 @@ public class EquationMethods {
        result +=("                     -----------------\n");
        result +=("                     ("+a1+")\n");
        
+       if(b2 < 0){
+       	//b2 = -b2;
+    	
+    	
+    	   result +=("Paso 4:\n");
+           result +=("x1 = - ("+b+") + ("+b2+") i\n");
+           result +=("                ----------\n");
+           result +=("                 ("+a1+")\n");
+           
+           result +=("x2 = - ("+b+") - ("+b2+") i\n");
+           result +=("                 ----------\n");
+           result +=("                 ("+a1+")\n");
+           result +=("\n");
+           
+           
+           result +=("Resultado:\n");
+           result +=("x1 = - ("+bI+") + ("+b2+") i\n");
+           result +=("x2 = - ("+bI+") - ("+b2+") i\n");
+          
+         
+        
+       }
+       
+       else{
        result +=("Paso 4:\n");
        result +=("x = - ("+b+") +- ("+sq+")\n");
        result +=("               -------------\n");
        result +=("                ("+a1+")\n");
+       result +=("\n");
        
        result +=("Paso 5:\n");
        result +=("x1 = - ("+b+") + ("+sq+")\n");
@@ -228,11 +263,11 @@ public class EquationMethods {
        result +=("     ----------\n");
        result +=("      ("+a1+")\n");
        
-       result +=("Paso 7:\n");
+       result +=("Resultado:\n");
        result +=("x1 =  ("+xf1+")\n");
        result +=("x2 = ("+xf2+")\n");
        
-       
+       } 
        return (result);
 	}
 	
