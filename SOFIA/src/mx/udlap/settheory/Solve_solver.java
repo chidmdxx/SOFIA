@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Solve_solver extends Activity {
 
@@ -19,7 +20,7 @@ public class Solve_solver extends Activity {
 		Bundle extras = getIntent().getExtras();
 		String resultado = extras.getString("resultado");
 
-		 EditText textconjuntoa = (EditText) findViewById(R.id.conjuntoA);
+		 TextView textconjuntoa = (TextView) findViewById(R.id.textResult);
 		 
 		 textconjuntoa.setText(resultado);
 	}

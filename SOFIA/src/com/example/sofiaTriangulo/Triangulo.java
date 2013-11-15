@@ -32,7 +32,7 @@ public class Triangulo extends Activity {
     bRespuesta = (Button) findViewById(R.id.button1);
     bPasos = (Button) findViewById(R.id.button2);
     bBorrar = (Button) findViewById(R.id.button4);
-    etiquetaRespuesta2 = (TextView) findViewById(R.id.textView2);
+    etiquetaRespuesta2 = (TextView) findViewById(R.id.textResult);
     //final TriangleSolver tri;
     
      A1 = (EditText) findViewById(R.id.editText1);
