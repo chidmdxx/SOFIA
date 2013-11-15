@@ -10,7 +10,7 @@
     tools:context=".Solve_exercises" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/conjuntoA"
@@ -25,15 +25,15 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignBottom="@+id/textResult"
+        android:layout_alignLeft="@+id/textResult"
         android:text="Conjunto A:" />
 
     <EditText
         android:id="@+id/conjuntoA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textResult"
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:height="10dp" />
