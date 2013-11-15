@@ -32,7 +32,8 @@ public class Solve_exercises extends Activity {
 					  "Diferencia    (-)",
 					  "Complemento de A    (A')",
 					  "Complemento de B    (B')",
-					  "(A ∪   B)'"};
+					  "(A ∪   B)'",
+	 				  "(A ∩   B)'"};
 	
 	int  variable;
 	
@@ -84,7 +85,9 @@ public class Solve_exercises extends Activity {
 					case 6:
 						variable = 6;
 						break;
-						
+					case 7:
+						variable = 7;
+						break;	
 				
 				}
 				
@@ -182,7 +185,19 @@ public class Solve_exercises extends Activity {
 						startActivity(sendTo);
 					}
 				}
-				
+				if (variable == 7)
+				{	
+					sendTo = new Intent(Solve_exercises.this, Solve_solver.class);
+					leerLosConjuntos();
+					if(conjuntosCorrectos)
+					{
+						SetTheoryOperations.clearOperacion();
+						Resultado=SetTheoryOperations.Intersection(A, B);
+						Resultado=SetTheoryOperations.Complement(U, Resultado);
+						sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+						startActivity(sendTo);
+					}
+				}
 				
 			}
 		});
