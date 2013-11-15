@@ -164,6 +164,15 @@ public class EquationMethods {
         return result;
     }
 	
+	public double division (double a, double b){
+		
+		double bi = a/b;
+		return bi;
+		
+	}
+	
+	
+	
 	public String PasoaPaso (int x, int y, int z, String ecuacion) {
         int a = x;
         int b = y;
@@ -175,8 +184,8 @@ public class EquationMethods {
         int b2 = b1+ac1;
        
         
-        float  bI = -b/a1;	
-        String.format("%.3g%n", bI);
+        double  i = division(-b,a1);	
+        //String.format("%.3g%n", bi);
         double sq = Math.sqrt(b2);
         double x1 = (-1 * b) + sq;
         double x2 = (-1 * b) - sq;
@@ -237,8 +246,8 @@ public class EquationMethods {
            
            
            result +=("Resultado:\n\n");
-           result +=("x1 = - ("+bI+") + ("+b2+") i\n");
-           result +=("x2 = - ("+bI+") - ("+b2+") i\n");
+           result +=("x1 = - ("+i+") + ("+b2+") i\n");
+           result +=("x2 = - ("+i+") - ("+b2+") i\n");
           
          
         
