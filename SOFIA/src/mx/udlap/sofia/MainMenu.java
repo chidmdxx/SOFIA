@@ -101,6 +101,18 @@ public class MainMenu extends Activity {
 			}
 		});
 		/*----------------------------------*/
+		
+		final ImageButton settings = (ImageButton) findViewById(R.id.imageButton4);
+		settings.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent sendTo = new Intent(MainMenu.this,
+						mx.udlap.sofia.SettingsActivity.class);
+				startActivity(sendTo);
+				// finish();
+			}
+		});
 
 	}
 
