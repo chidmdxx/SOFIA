@@ -16,18 +16,23 @@
         <activity
             android:name="mx.udlap.sofia.MainMenu"
             android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity android:name="mx.udlap.settheory.Theory_description"></activity>
+        <activity android:name="mx.udlap.settheory.Seeanswer_exercises"></activity>
+        <activity android:name="mx.udlap.settheory.Solve_exercises"></activity>
+        <activity android:name="mx.udlap.settheory.Solve_solver"></activity>
+        <activity android:name="mx.udlap.equations.Equation_graphic"></activity>
+        <activity android:name="mx.udlap.equations.Equation_menu">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        	<action android:name="android.intent.action.MAIN" />
+        	<category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
-        <activity android:name="com.example.sofia.Theory_description"></activity>
-        <activity android:name="com.example.sofia.Seeanswer_exercises">
-        </activity>
-        <activity android:name="com.example.sofia.Solve_exercises"></activity>
-        <activity android:name="com.example.sofia.Solve_solver"></activity>
-        <activity android:name="com.example.sofia.Interfaz"></activity>
-        <activity android:name="com.example.sofiaTriangulo.Triangulo"></activity>
+        <activity android:name="mx.udlap.settheory.Interfaz"></activity>
+        <activity android:name="mx.udlap.equations.Equation_solver_answer"></activity>
+        <activity android:name="mx.udlap.equations.Equation_solver"></activity>
+        <activity android:name="com.example.sofia.Solver_exercises"></activity>
+        <activity android:name="com.example.sofia.Methods"></activity>
         
     </application>
 

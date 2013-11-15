@@ -6,6 +6,12 @@ import java.util.List;
 
 public class SetTheoryOperations {
 	public static List<String> Resultado;
+	public static String Operacion;
+	
+	public static void clearOperacion()
+	{
+		Operacion="";
+	}
 	
 	public static List<String> Union (List<String> A, List<String>B)
 	{
@@ -15,6 +21,7 @@ public class SetTheoryOperations {
 		hs.addAll(B);	
 		toReturn.addAll(hs);
 		Resultado=toReturn;
+		Operacion=Operacion+A.toString()+" union " +B.toString()+"\n";
 		return toReturn;
 	}
 	
@@ -45,6 +52,7 @@ public class SetTheoryOperations {
 		List<String> toReturn=new ArrayList<String>(minuend);
 		toReturn.removeAll(subtrahend);
 		Resultado=toReturn;
+		Operacion=Operacion+minuend+" menos " +subtrahend+"\n";
 		return toReturn;
 	}
 	
@@ -54,6 +62,7 @@ public class SetTheoryOperations {
 		toReturn.addAll(A); // adds initial values to the result set
 		toReturn.retainAll(B);
 		Resultado=toReturn;
+		Operacion=Operacion+A.toString()+" intersección " +B.toString()+"\n";
 		return toReturn;
 	}
 	
@@ -69,8 +78,12 @@ public class SetTheoryOperations {
 		return toReturn;
 	}
 	
-	public static List<String> Complement (List<String> universe, List<String> a)
+	public static List<String> Complement (List<String> U, List<String> A)
 	{
-		return SetTheoryOperations.Diference(universe, a);
+		List<String> toReturn=new ArrayList<String>(U);
+		toReturn.removeAll(A);
+		Resultado=toReturn;
+		Operacion=Operacion+A.toString()+" complemento, con universo " +U.toString()+"\n";
+		return toReturn;
 	}
 }

@@ -1,6 +1,6 @@
+package mx.udlap.settheory;
 
-/*package com.example.sofia;
-
+import mx.udlap.sofia.R;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -38,4 +38,3 @@ but.setOnClickListener(new View.OnClickListener() {
 	}
 
 }
-*/

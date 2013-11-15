@@ -19,7 +19,7 @@ public class Triangulo extends Activity {
 	// Double editText2;
 	// Double editText3;
 	EditText A1,B1,C1, Alfa1, Beta1, Gamma1;
-	Button bRespuesta, bPasos, bVersion;
+	Button bRespuesta, bPasos, bVersion, bBorrar;
 	TextView etiquetaRespuesta, etiquetaRespuesta2;
 	double[] G;
 
@@ -31,6 +31,7 @@ public class Triangulo extends Activity {
     etiquetaRespuesta = (TextView) findViewById(R.id.textView1);
     bRespuesta = (Button) findViewById(R.id.button1);
     bPasos = (Button) findViewById(R.id.button2);
+    bBorrar = (Button) findViewById(R.id.button4);
     etiquetaRespuesta2 = (TextView) findViewById(R.id.textView2);
     //final TriangleSolver tri;
     
@@ -54,15 +55,30 @@ public class Triangulo extends Activity {
                 // doStuff
                 setContentView(R.layout.activity_triangle);
                 break;
-            /*case R.id.button3: 
+            case R.id.button4: 
                 // doStuff
                 setContentView(R.layout.activity_triangle);
-                break;	*/
+                break;
 			}
 		}
     	 
      };
 		findViewById(R.id.button3).setOnClickListener(vista);
+		
+	bBorrar.setOnClickListener(new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View v) 
+		{
+
+			A1.setText("");
+			B1.setText("");
+			C1.setText("");
+			Alfa1.setText("");
+			Beta1.setText("");
+			Gamma1.setText("");
+		}
+	});
      
      bRespuesta.setOnClickListener(new View.OnClickListener() {
 		
@@ -105,6 +121,7 @@ public class Triangulo extends Activity {
 				Beta1.setText(String.valueOf((float)(G[4])));
 				Gamma1.setText(String.valueOf((float)(G[5])));
 				bPasos.setVisibility(View.VISIBLE);
+				bBorrar.setVisibility(View.VISIBLE);
 				
 
 				

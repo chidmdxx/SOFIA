@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/Exercises"
         android:layout_centerHorizontal="true"
+        android:gravity="center|center_vertical"
         android:height="@dimen/Botones_grandes"
         android:text="@string/Theory"
         android:width="@dimen/Botones_grandes_ancho" />

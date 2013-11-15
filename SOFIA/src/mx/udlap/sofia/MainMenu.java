@@ -48,7 +48,7 @@ public class MainMenu extends Activity {
 
 		final ImageButton conjuntos = (ImageButton) findViewById(R.id.imageButton2);
 
-		conjuntos.setOnClickListener(new View.OnClickListener() {
+		/*conjuntos.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -71,7 +71,7 @@ public class MainMenu extends Activity {
 				startActivity(sendTo);
 				// finish();
 			}
-		});
+		});*/
 
 	}
 

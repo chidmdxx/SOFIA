@@ -1,8 +1,8 @@
-
-/*package com.example.sofia;
-
+package mx.udlap.settheory;
 
 import java.util.*;
+
+import mx.udlap.sofia.R;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -32,4 +32,3 @@ public class Solve_solver extends Activity {
 	}
 
 }
-*/
