@@ -26,6 +26,8 @@
         </activity>
         <activity android:name="com.example.sofia.Solve_exercises"></activity>
         <activity android:name="com.example.sofia.Solve_solver"></activity>
+        <activity android:name="com.example.sofia.Interfaz"></activity>
+        <activity android:name="com.example.sofiaTriangulo.Triangulo"></activity>
         
     </application>
 
