@@ -18,10 +18,11 @@ public class Triangulo extends Activity {
      //Double fas = editText1;
 	// Double editText2;
 	// Double editText3;
-	EditText A1,B1,C1, Alfa1, Beta1, Gamma1;
+	EditText A1,B1,C1, Alfa1, Beta1, Gamma1 ;
 	Button bRespuesta, bPasos, bVersion, bBorrar;
-	TextView etiquetaRespuesta, etiquetaRespuesta2;
+	TextView etiquetaRespuesta, etiquetaRespuesta2, etiquetaPasos ;
 	double[] G;
+	Double AText, BText, CText, AlText, BeText, GaText; 
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class Triangulo extends Activity {
     bPasos = (Button) findViewById(R.id.button2);
     bBorrar = (Button) findViewById(R.id.button4);
     etiquetaRespuesta2 = (TextView) findViewById(R.id.textView2);
-    //final TriangleSolver tri;
+    etiquetaPasos = (TextView) findViewById(R.id.textView10);
     
      A1 = (EditText) findViewById(R.id.editText1);
      B1 = (EditText) findViewById(R.id.editText3);
@@ -42,7 +43,8 @@ public class Triangulo extends Activity {
      Beta1 = (EditText) findViewById(R.id.editText5);
      Gamma1 = (EditText) findViewById(R.id.editText6);
      
-     View.OnClickListener vista = new  View.OnClickListener()
+     
+     /*View.OnClickListener vista = new  View.OnClickListener()
      {
 
 		@Override
@@ -53,32 +55,45 @@ public class Triangulo extends Activity {
 
             case R.id.button3: 
                 // doStuff
-                setContentView(R.layout.activity_triangle);
+                setContentView(R.layout.triangulo);
                 break;
             case R.id.button4: 
                 // doStuff
-                setContentView(R.layout.activity_triangle);
-                break;
+                setContentView(R.layout.triangulo);
+                break;	
 			}
 		}
     	 
      };
-		findViewById(R.id.button3).setOnClickListener(vista);
+		findViewById(R.id.button3).setOnClickListener(vista);*/
 		
-	bBorrar.setOnClickListener(new View.OnClickListener() {
+	bPasos.setOnClickListener(new View.OnClickListener() 
+	{
 		
 		@Override
 		public void onClick(View v) 
 		{
-
-			A1.setText("");
-			B1.setText("");
-			C1.setText("");
-			Alfa1.setText("");
-			Beta1.setText("");
-			Gamma1.setText("");
+			String pasos;
+			setContentView(R.layout.triangulo_pasos);
+			etiquetaPasos = (TextView) findViewById(R.id.textView10);
+			pasos = TriangleSolver.pasoPorPaso(AText, BText, CText, AlText, BeText, GaText);
+			etiquetaPasos.setText(pasos);
 		}
 	});
+		
+	bBorrar.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+				A1.setText("");
+				B1.setText("");
+				C1.setText("");
+				Alfa1.setText("");
+				Beta1.setText("");
+				Gamma1.setText("");
+			}
+		});
      
      bRespuesta.setOnClickListener(new View.OnClickListener() {
 		
@@ -96,11 +111,17 @@ public class Triangulo extends Activity {
 			String Gamma33 = Gamma1.getText().toString();
 			
 			double A = EsNull(A11);
+			AText = A;
 			double B = EsNull(B22);
+			BText = B;
 			double C = EsNull(C33);
+			CText = C;
 			double Alfa = EsNull(Alfa11);
+			AlText = Alfa;
 			double Beta = EsNull(Beta22);
+			BeText = Beta;
 			double Gamma = EsNull(Gamma33);
+			GaText = Gamma;
 			/*double C = Double.valueOf(C33).doubleValue();
 			double Alfa = Double.valueOf(Alfa11).doubleValue();
 			double Beta = Double.valueOf(Beta22).doubleValue();
@@ -111,8 +132,11 @@ public class Triangulo extends Activity {
 			{
 				String info = "los lados si forman un tringulo";
 				etiquetaRespuesta.setText(info);
-				TriangleSolver tri = null;
+				TriangleSolver
+				tri = null;
 				G = tri.solver(A, B, C, Alfa, Beta, Gamma);
+
+				//String solucion = tri.pasoPorPaso(A, B, C, Alfa, Beta, Gamma);
 				System.out.print(G);
 				A1.setText(String.valueOf((G[0])));
 				B1.setText(String.valueOf((G[1])));
@@ -122,7 +146,6 @@ public class Triangulo extends Activity {
 				Gamma1.setText(String.valueOf((float)(G[5])));
 				bPasos.setVisibility(View.VISIBLE);
 				bBorrar.setVisibility(View.VISIBLE);
-				
 
 				
 			
@@ -199,11 +222,11 @@ public class Triangulo extends Activity {
     }
 
 
-    //@Override
-   /* public boolean onCreateOptionsMenu(Menu menu) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }*/
+    }
     
 }
