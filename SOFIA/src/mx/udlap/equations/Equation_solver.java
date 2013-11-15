@@ -48,6 +48,7 @@ public class Equation_solver extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent sendTo_graphic = new Intent(Equation_solver.this, mx.udlap.equations.Equation_graphic.class);
+				equation = eq.getText().toString();
 				sendTo_graphic.putExtra("equation", equation);
 				startActivity(sendTo_graphic); 
 			}
