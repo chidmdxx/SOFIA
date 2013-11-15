@@ -48,6 +48,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
         db.execSQL(sqlInsert4);
         db.execSQL(sqlInsert5);
         db.execSQL(sqlInsert6);
+        db.execSQL(sqlInsert7);
         db.execSQL(sqlInsert8);
         db.execSQL(sqlInsert9);
         db.execSQL(sqlInsert10);
