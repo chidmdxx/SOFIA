@@ -13,7 +13,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="65dp"
         android:background="@null"
-        android:src="@drawable/ecuacioneshd" />
+        android:src="@drawable/ecuaciones" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -23,7 +23,7 @@
         android:layout_alignTop="@+id/imageButton1"
         android:layout_marginRight="28dp"
         android:background="@null"
-        android:src="@drawable/triangulosld" />
+        android:src="@drawable/triangulos" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -33,7 +33,7 @@
         android:layout_below="@+id/imageButton1"
         android:layout_marginTop="57dp"
         android:background="@null"
-        android:src="@drawable/conjuntosld" />
+        android:src="@drawable/conjuntos" />
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -42,6 +42,6 @@
         android:layout_alignLeft="@+id/imageButton3"
         android:layout_alignTop="@+id/imageButton2"
         android:background="@null"
-        android:src="@drawable/ajustesld" />
+        android:src="@drawable/ajustes" />
  
 </RelativeLayout>

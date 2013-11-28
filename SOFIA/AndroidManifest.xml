@@ -48,7 +48,18 @@
             android:name="mx.udlap.sofia.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
-        <activity android:name="com.example.sofiaTriangulo.Triangulo"></activity>
+        <activity android:name="com.example.sofiaTriangulo.Triangulo" >
+        </activity>
+
+        <!-- Broadcast receiver that will process Android updates -->
+        <receiver
+            android:name=".Sofia_Widget"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name ="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name ="android.appwidget.provider" android:resource ="@xml/widget_provider" />
+        </receiver>
     </application>
 
 </manifest>
