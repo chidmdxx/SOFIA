@@ -1,5 +1,5 @@
-//package mx.udlap.sofia;
-/*
+package mx.udlap.sofia;
+
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -29,14 +29,14 @@ import java.util.List;
  * Android Design: Settings</a> for design guidelines and the <a
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
- *
+ */
 public class SettingsActivity extends PreferenceActivity {
 	/**
 	 * Determines whether to always show the simplified settings UI, where
 	 * settings are presented in a single list. When false, settings are shown
 	 * as a master/detail two-pane view on tablets. When true, a single pane is
 	 * shown on tablets.
-	 *
+	 */
 	private static final boolean ALWAYS_SIMPLE_PREFS = false;
 
 	@Override
@@ -50,7 +50,7 @@ public class SettingsActivity extends PreferenceActivity {
 	 * Shows the simplified settings UI if the device configuration if the
 	 * device configuration dictates that a simplified, single-pane UI should be
 	 * shown.
-	 *
+	 */
 	private void setupSimplePreferencesScreen() {
 		if (!isSimplePreferences(this)) {
 			return;
@@ -83,7 +83,7 @@ public class SettingsActivity extends PreferenceActivity {
 		bindPreferenceSummaryToValue(findPreference("sync_frequency"));
 	}
 
-	/** {@inheritDoc} *
+	/** {@inheritDoc} */
 	@Override
 	public boolean onIsMultiPane() {
 		return isXLargeTablet(this) && !isSimplePreferences(this);
@@ -92,7 +92,7 @@ public class SettingsActivity extends PreferenceActivity {
 	/**
 	 * Helper method to determine if the device has an extra-large screen. For
 	 * example, 10" tablets are extra-large.
-	 *
+	 */
 	private static boolean isXLargeTablet(Context context) {
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
 	}
@@ -103,14 +103,14 @@ public class SettingsActivity extends PreferenceActivity {
 	 * doesn't have newer APIs like {@link PreferenceFragment}, or the device
 	 * doesn't have an extra-large screen. In these cases, a single-pane
 	 * "simplified" settings UI should be shown.
-	 *
+	 */
 	private static boolean isSimplePreferences(Context context) {
 		return ALWAYS_SIMPLE_PREFS
 				|| Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB
 				|| !isXLargeTablet(context);
-	}*/
+	}
 
-	/** {@inheritDoc} *
+	/** {@inheritDoc} */
 	@Override
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void onBuildHeaders(List<Header> target) {
@@ -122,7 +122,7 @@ public class SettingsActivity extends PreferenceActivity {
 	/**
 	 * A preference value change listener that updates the preference's summary
 	 * to reflect its new value.
-	 *
+	 */
 	private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object value) {
@@ -169,7 +169,7 @@ public class SettingsActivity extends PreferenceActivity {
 			}
 			return true;
 		}
-	};*/
+	};
 
 	/**
 	 * Binds a preference's summary to its value. More specifically, when the
@@ -197,7 +197,7 @@ public class SettingsActivity extends PreferenceActivity {
 	/**
 	 * This fragment shows general preferences only. It is used when the
 	 * activity is showing a two-pane settings UI.
-	 *
+	 */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public static class GeneralPreferenceFragment extends PreferenceFragment {
 		@Override
@@ -216,7 +216,7 @@ public class SettingsActivity extends PreferenceActivity {
 
 	/**
 	 * This fragment shows notification preferences only. It is used when the
-	 * activity is showing a two-pane settings UI.
+	 * activity is showing a two-pane settings UI.*/
 	 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public static class NotificationPreferenceFragment extends
@@ -232,11 +232,11 @@ public class SettingsActivity extends PreferenceActivity {
 			// guidelines.
 			bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
 		}
-	}*/
+	}
 
 	/**
 	 * This fragment shows data and sync preferences only. It is used when the
-	 * activity is showing a two-pane settings UI.
+	 * activity is showing a two-pane settings UI.*/
 	 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public static class DataSyncPreferenceFragment extends PreferenceFragment {
@@ -252,4 +252,4 @@ public class SettingsActivity extends PreferenceActivity {
 			bindPreferenceSummaryToValue(findPreference("sync_frequency"));
 		}
 	}
-}*/
+}
