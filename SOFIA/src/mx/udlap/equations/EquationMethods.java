@@ -2,7 +2,7 @@ package mx.udlap.equations;
 
 import android.annotation.SuppressLint;
 
-@SuppressLint("DefaultLocale")
+
 public class EquationMethods {
 	
 	public String solver(String equation){
@@ -109,8 +109,8 @@ public class EquationMethods {
 	
 	static Integer[] parsePolynomial(String input) {
         if(input.indexOf("x") == -1){
-        	System.out.print("malo");
-        } //throw new NumberFormatException();
+        	//throw new NumberFormatException();
+        } 
         if(input.indexOf("=") == -1) throw new NumberFormatException();
         Integer[] result = new Integer[10];
         //remove all whitespaces
