@@ -108,7 +108,9 @@ public class EquationMethods {
     }
 	
 	static Integer[] parsePolynomial(String input) {
-        if(input.indexOf("x") == -1) throw new NumberFormatException();
+        if(input.indexOf("x") == -1){
+        	System.out.print("malo");
+        } //throw new NumberFormatException();
         if(input.indexOf("=") == -1) throw new NumberFormatException();
         Integer[] result = new Integer[10];
         //remove all whitespaces
@@ -139,9 +141,11 @@ public class EquationMethods {
                 if(splitPlus[i].indexOf("x^2") >= 0) {
                 	if (splitPlus[i].indexOf("x^2") == 0){
                         //System.out.println("entro1");
-                        result[0] = 1;
+                        result[0] = 1;   
                      }
-                	 
+                	 /*if (splitPlus[i].indexOf("x^2") == -0){
+                		result[0] = -1;
+                	} */
                 	else{
                         String[] splitX2 = splitPlus[i].split("x");
                         if(splitX2.length != 2) throw new NumberFormatException();
@@ -172,10 +176,67 @@ public class EquationMethods {
 		
 	}
 	
+	public String GetEquation (int a, int b, int c){
+		String equation = "" ;
+		String vala = "";
+		String valb = "";
+		String valc = "";
+		
+		if (a == 1) {
+	    	vala =  "x\u00b2";  //xˆ2
+			
+	    	   if(b<0){ // b es negativo	 
+	    		   valb = (b+"x");//-n
+	    	   }  
+	    	   else{ // b es positivo
+	   				valb = ("+"+b+"x");	
+	   		   }   
+	    		   
+		   	   if(c <0){
+		   			valc = (c+"=");//-n
+		   					//equation +=("x\u00b2"+b+"x"+c+"= 0");
+		   		}
+		   		else{ // c es positivo
+		   			valc = ("+"+c+"=");	
+		   					
+		   		}
+	    }   
+	   	else{ // a ! 1
+	   		
+	   		   if(a<0){ // a es negativo	 
+	    		   vala = (a+"x\u00b2");//-n
+	    	   }  
+	    	   else{ // a es positivo
+	   				vala = (a+"x\u00b2");	
+	   		   } 
+	   		  if(b<0){ // b es negativo	 
+	    		   valb = (b+"x");//-n
+	    	   }  
+	    	   else{ // b es positivo
+	   				valb = ("+"+b+"x");	
+	   		   }   
+	    		   
+		   	   if(c <0){
+		   			valc = (c+"=");//-n
+		   					//equation +=("x\u00b2"+b+"x"+c+"= 0");
+		   		}
+		   		else{ // c es positivo
+		   			valc = ("+"+c+" =");	
+		   					
+		   		}		
+	    	  
+	       }
+		  equation +=(vala+valb+valc);
+		
+		return equation;
+		
+	}
+	
 	
 	
 	public String PasoaPaso (int x, int y, int z, String ecuacion) {
-        int a = x;
+        
+		int a = x;
         int b = y;
         int c = z;
         int b1 = b *b;
@@ -185,7 +246,7 @@ public class EquationMethods {
         int b2 = b1+ac1;
         int decimales = 2;
        
-        
+        String eq = GetEquation(a,b,c);
 
         double  i = division(-b,a1);	
         //String.format("%.3g%n", bi);
@@ -205,10 +266,9 @@ public class EquationMethods {
        // double root2 = (-b -  temp1) / (2*a) ;
         
         
-       String result = ("Ecuacion: "+ecuacion+"\n"); 
-       //result+=(a+"x\u00b2"+b+"x"+c+"= 0");
-       result +=("\n");
-       result +=("Aplicando Formula general:\n\n"); 
+       String result = ("Ecuacion: "+eq+"\n\n");
+       
+       result +=("Aplicando Fórmula general:\n\n"); 
        //result += ("        --------------------------------------\n");
        result +=("x = - ("+round(b, decimales)+")	 \u00b1 \u221A "+round(b, decimales)+"\u00b2 -4("+round(a, decimales)+") ("+round(c, decimales)+")\n");
        result +=("         -----------------------------\n");
