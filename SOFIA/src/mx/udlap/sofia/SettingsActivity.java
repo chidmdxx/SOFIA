@@ -18,7 +18,7 @@ import android.preference.RingtonePreference;
 import android.text.TextUtils;
 
 import java.util.List;
-
+//para uly
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
  * handset devices, settings are presented as a single list. On tablets,
