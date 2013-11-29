@@ -38,7 +38,7 @@ public class Equation_solver extends Activity {
 				/*xy.setText(methods.PasoaPaso(a, b, c));
 				eq.setText("");*/
 				
-				Resultado = methods.PasoaPaso(a, b, c, equation);
+				Resultado = methods.PasoaPaso(a, b, c);
 				sendTo.putExtra("result", Resultado);
 				startActivity(sendTo);
 			}
