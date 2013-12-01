@@ -21,23 +21,6 @@
         android:textSize="@dimen/Titulo_size"
         android:width="@dimen/Titulo_ancho" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textResult"
-        android:layout_alignLeft="@+id/textResult"
-        android:text="Conjunto A:" />
-
-    <EditText
-        android:id="@+id/conjuntoA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textResult"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:height="10dp" />
-
     <EditText
         android:id="@+id/conjuntoB"
         android:layout_width="wrap_content"
@@ -65,27 +48,65 @@
         android:ems="10" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/conjuntoR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/conjuntoB"
-        android:layout_centerVertical="true"
-        android:text="Universo:" />
+        android:layout_alignLeft="@+id/universo"
+        android:layout_below="@+id/lista1"
+        android:text="Resultado:" />
+
+    <Button
+        android:id="@+id/resolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/universo"
+        android:text="Paso a Paso" />
+
+    <EditText
+        android:id="@+id/Resul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/conjuntoR"
+        android:layout_below="@+id/conjuntoR"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textResult"
+        android:layout_alignLeft="@+id/textResult"
+        android:layout_marginBottom="15dp"
+        android:text="Conjunto A:" />
+
+    <EditText
+        android:id="@+id/conjuntoA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:height="10dp" >
+
+        <requestFocus />
+    </EditText>
 
     <Spinner
         android:id="@+id/lista1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/universo"
-        android:layout_below="@+id/universo"
-        android:layout_marginTop="32dp" />
+        android:layout_below="@+id/universo" />
 
-    <Button
-        android:id="@+id/resolver"
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lista1"
-        android:layout_toRightOf="@+id/textView4"
-        android:text="Resolver" />
+        android:layout_alignLeft="@+id/conjuntoB"
+        android:layout_below="@+id/conjuntoB"
+        android:layout_marginTop="16dp"
+        android:text="Universo:" />
 
 </RelativeLayout>

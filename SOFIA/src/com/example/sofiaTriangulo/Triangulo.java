@@ -35,7 +35,7 @@ public class Triangulo extends Activity {
     etiquetaRespuesta2 = (TextView) findViewById(R.id.textResult);
     //final TriangleSolver tri;
     
-     A1 = (EditText) findViewById(R.id.editText1);
+     A1 = (EditText) findViewById(R.id.Resul);
      B1 = (EditText) findViewById(R.id.editText3);
      C1 = (EditText) findViewById(R.id.editText2);
      Alfa1 = (EditText) findViewById(R.id.editText4);

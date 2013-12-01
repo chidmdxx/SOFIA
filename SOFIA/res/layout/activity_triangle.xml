@@ -22,13 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/editText1"
+        android:layout_alignTop="@+id/Resul"
         android:layout_marginTop="20dp"
         android:ems="5"
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/Resul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView1"
-        android:layout_alignRight="@+id/editText1" />
+        android:layout_alignRight="@+id/Resul" />
 
     <EditText
         android:id="@+id/editText4"
