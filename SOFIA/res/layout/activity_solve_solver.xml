@@ -9,7 +9,7 @@
     tools:context=".Solve_solver" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/solver_Result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="71dp"
@@ -20,8 +20,8 @@
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignTop="@+id/textView1"
+        android:layout_alignLeft="@+id/solver_Result"
+        android:layout_alignTop="@+id/solver_Result"
         android:layout_marginTop="57dp"
         android:text="TextView" />
 

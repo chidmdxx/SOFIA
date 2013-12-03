@@ -7,14 +7,12 @@ import mx.udlap.sofia.SQLiteHelper;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class Interfaz extends Activity {
 	
@@ -51,11 +49,8 @@ public class Interfaz extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Context context = getApplicationContext();
-				CharSequence text = "Funcion no implementada aun...";
-				int duration = Toast.LENGTH_LONG;
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
+				Intent sendTo = new Intent(Interfaz.this, Theory_exercises.class);
+				startActivity(sendTo);
 				
 			}
 		});

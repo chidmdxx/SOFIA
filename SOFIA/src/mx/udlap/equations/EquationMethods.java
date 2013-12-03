@@ -11,15 +11,21 @@ public class EquationMethods {
         int a=0,b=0,c=0;
         Integer[] results;
         
+        
+//  while(equation != ""){
         try {
             results = parsePolynomial(equation);
+            //break;
             a = results[0];
             b = results[1];
             c = results[2];
+            
         } 
         catch (NumberFormatException e) {
             System.out.println("    Result: Malformed input polynomial");
         }
+      //}  
+        
         
         double temp1 = Math.sqrt(b * b - 4 * a * c);
         double root1 = (-b +  temp1) / (2*a) ;
@@ -72,7 +78,8 @@ public class EquationMethods {
             return a;
         } 
         catch (NumberFormatException e) {
-            System.out.println("    Result: Malformed input polynomial");
+            
+        	System.out.println("    Result: Malformed input polynomial");
         } 
         return a;
     }
@@ -85,9 +92,11 @@ public class EquationMethods {
         try {
             results = parsePolynomial(equation);
             b = results[1];
+           
         } 
         catch (NumberFormatException e) {
-            System.out.println("    Result: Malformed input polynomial");
+           // b = 0;
+        	System.out.println("    Result: Malformed input polynomial");
         } 
         return b;
     }
@@ -108,11 +117,16 @@ public class EquationMethods {
     }
 	
 	static Integer[] parsePolynomial(String input) {
-        if(input.indexOf("x") == -1){
-        	//throw new NumberFormatException();
+        if(input.indexOf("x") == -1 || input.indexOf("x^2") == -1){
+        	throw new NumberFormatException();
         } 
         if(input.indexOf("=") == -1) throw new NumberFormatException();
+        
         Integer[] result = new Integer[10];
+        result[0] = new Integer(0);
+        result[1] = new  Integer(0);
+        result[2] = new Integer(0);
+        
         //remove all whitespaces
         input = input.replaceAll(" ", "");
         String[] splitEquals = input.split("=");
@@ -132,7 +146,9 @@ public class EquationMethods {
         }
         else beforeEquals = input;
         //replace all the '-' by '+-' so we can now split everything using '+' while keeping the '-' intact
+        beforeEquals = beforeEquals.replaceAll("-x", "-1x");
         beforeEquals = beforeEquals.replaceAll("-", "+-");
+        
         //If there is a leading '+' remove it
         if(beforeEquals.indexOf("+") == 0) beforeEquals = beforeEquals.replaceFirst("\\+", "");
         String[] splitPlus = beforeEquals.split("\\+");
@@ -143,7 +159,7 @@ public class EquationMethods {
                         //System.out.println("entro1");
                         result[0] = 1;   
                      }
-                	 /*if (splitPlus[i].indexOf("x^2") == -0){
+                	 /*if (splitPlus[i].indexOf("x^2") <0 && splitPlus[i].indexOf("x^2")>-2 ){
                 		result[0] = -1;
                 	} */
                 	else{
@@ -203,7 +219,12 @@ public class EquationMethods {
 	    }   
 	   	else{ // a ! 1
 	   		
-	   		   if(a<0){ // a es negativo	 
+	   		   
+	   			if(a<0 ){ // a es negativo	 
+	    		  
+	    		   if(a==-1){
+	   	   			vala =  "-x\u00b2";  //xˆ2
+	   	   		   }
 	    		   vala = (a+"x\u00b2");//-n
 	    	   }  
 	    	   else{ // a es positivo
@@ -232,13 +253,26 @@ public class EquationMethods {
 		
 	}
 	
-	
-	
-	public String PasoaPaso (int x, int y, int z, String ecuacion) {
+	public String PasoaPaso (int x, int y, int z) {
         
+		
 		int a = x;
         int b = y;
         int c = z;
+        /*
+        if(a==0 && b==0 && c==0){
+			String result = ("MAL ESCRITO");
+			return result;
+		}
+        if(a!=0 && b==0 && c!=0){
+			String result = ("MAL ESCRITO");
+			return result;
+		}
+        /*if( a==0){
+			String result = ("SOLO ECUACIONES DE SEGUNDO GRADO");
+			return result;
+		}*/
+        
         int b1 = b *b;
         int ac = a *c;
         int a1 = a *2;
@@ -279,21 +313,21 @@ public class EquationMethods {
        result +=("Paso 1:\n\n");
        result +=("x = - ("+round(b, decimales)+") \u00b1 \u221A "+round(b1, decimales)+"  -4("+round(ac, decimales)+")\n");
        result +=("         ------------------------\n");
-       result +=("                      ("+round(a1, 2)+")\n");
+       result +=("                      "+round(a1, 2)+"\n");
        result +=("\n");
        
        
        result +=("Paso 2:\n\n");
        result +=("x = - ("+round(b, decimales)+") \u00b1 \u221A "+round(b1, decimales)+" + ("+round(ac1, decimales)+")\n");
        result +=("        --------------------------\n");
-       result +=("                       ("+round(a1, decimales)+")\n");
+       result +=("                       "+round(a1, decimales)+"\n");
        result +=("\n");
       
        
        result +=("Paso 3:\n\n");
        result +=("x = - ("+round(b, decimales)+") \u00b1 \u221A ("+round(b2, decimales)+")\n");
        result +=("        -----------------\n");
-       result +=("                 ("+round(a1, decimales)+")\n");
+       result +=("                 "+round(a1, decimales)+"\n");
        result +=("\n");
        
        if(b2 < 0){
@@ -303,18 +337,18 @@ public class EquationMethods {
     	   result +=("Paso 4:\n\n");
            result +=("x1 = - ("+round(b, decimales)+") + ("+round(b2, decimales)+") i\n");
            result +=("           ------------\n");
-           result +=("                 ("+round(a1, decimales)+")\n");
+           result +=("                 "+round(a1, decimales)+"\n");
            
            result +=("x2 = - ("+round(b, decimales)+") - ("+round(b2, decimales)+") i\n");
            result +=("           ------------\n");
-           result +=("                 ("+round(a1, decimales)+")\n");
+           result +=("                 "+round(a1, decimales)+"\n");
            result +=("\n");
            
            
            result +=("Resultado:\n\n");
 
-           result +=("x1 = - ("+i+") + ("+b2+") i\n");
-           result +=("x2 = - ("+i+") - ("+b2+") i\n");
+           //result +=("x1 = - ("+i+") + ("+b2+") i\n");
+           //result +=("x2 = - ("+i+") - ("+b2+") i\n");
 
            result +=("x1 = - ("+round(i, decimales)+") + ("+round(b2, decimales)+") i\n");
            result +=("x2 = - ("+round(i, decimales)+") - ("+round(b2, decimales)+") i\n");
@@ -326,29 +360,29 @@ public class EquationMethods {
        result +=("Paso 4:\n\n");
        result +=("x = - ("+round(b, decimales)+") \u00b1 ("+round(sq, decimales)+")\n");
        result +=("          --------------\n");
-       result +=("                ("+round(a1, decimales)+")\n");
+       result +=("                "+round(a1, decimales)+"\n");
        result +=("\n");
        
        result +=("Paso 5:\n\n");
        result +=("x1 = - ("+round(b, decimales)+") + ("+round(sq, decimales)+")\n");
        result +=("           --------------\n");
-       result +=("                 ("+round(a1, 2)+")\n");
+       result +=("                 "+round(a1, 2)+"\n");
        result +=("\n");
        
        result +=("x2 = - ("+round(b, decimales)+") - ("+round(sq, decimales)+")\n");
        result +=("           --------------\n");
-       result +=("                 ("+round(a1, decimales)+")\n");
+       result +=("                 "+round(a1, decimales)+"\n");
        result +=("\n");
        
        result +=("Paso 6:\n\n");
        result +=("x1 =  ("+round(x1, decimales)+")\n");
        result +=("          ------\n");
-       result +=("           ("+round(a1, decimales)+")\n");
+       result +=("           "+round(a1, decimales)+"\n");
        result +=("\n");
        
        result +=("x2 =  ("+round(x2, decimales)+")\n");
        result +=("          ------\n");
-       result +=("           ("+round(a1, decimales)+")\n");
+       result +=("           "+round(a1, decimales)+"\n");
        result +=("\n");
        
        result +=("Resultado:\n\n");

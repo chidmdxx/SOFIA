@@ -21,17 +21,34 @@
         android:textSize="@dimen/Titulo_size"
         android:width="@dimen/Titulo_ancho" />
 
+    <TextView
+        android:id="@+id/solver_Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textResult"
+        android:layout_alignLeft="@+id/textResult"
+        android:text="Conjunto A:" />
+
+    <EditText
+        android:id="@+id/conjuntoA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textResult"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:height="10dp" />
+
     <EditText
         android:id="@+id/conjuntoB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/equation_definicion1"
+        android:layout_below="@+id/equation_definicion1"
         android:ems="10"
         android:height="10dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/equation_definicion1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/conjuntoA"
@@ -43,70 +60,32 @@
         android:id="@+id/universo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/equation_definicion2"
+        android:layout_below="@+id/equation_definicion2"
         android:ems="10" />
 
     <TextView
-        android:id="@+id/conjuntoR"
+        android:id="@+id/equation_definicion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/universo"
-        android:layout_below="@+id/lista1"
-        android:text="Resultado:" />
-
-    <Button
-        android:id="@+id/resolver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/universo"
-        android:text="Paso a Paso" />
-
-    <EditText
-        android:id="@+id/Resul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/conjuntoR"
-        android:layout_below="@+id/conjuntoR"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textResult"
-        android:layout_alignLeft="@+id/textResult"
-        android:layout_marginBottom="15dp"
-        android:text="Conjunto A:" />
-
-    <EditText
-        android:id="@+id/conjuntoA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
-        android:ems="10"
-        android:height="10dp" >
-
-        <requestFocus />
-    </EditText>
+        android:layout_alignLeft="@+id/conjuntoB"
+        android:layout_centerVertical="true"
+        android:text="Universo:" />
 
     <Spinner
         android:id="@+id/lista1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/universo"
-        android:layout_below="@+id/universo" />
+        android:layout_below="@+id/universo"
+        android:layout_marginTop="32dp" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <Button
+        android:id="@+id/resolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/conjuntoB"
-        android:layout_below="@+id/conjuntoB"
-        android:layout_marginTop="16dp"
-        android:text="Universo:" />
+        android:layout_below="@+id/lista1"
+        android:layout_toRightOf="@+id/equation_definicion2"
+        android:text="Resolver" />
 
 </RelativeLayout>

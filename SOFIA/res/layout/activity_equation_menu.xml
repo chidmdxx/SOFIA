@@ -9,7 +9,7 @@
     tools:context=".Equation_menu" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/solver_Result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="top|center_vertical|center_horizontal|center"
@@ -20,20 +20,20 @@
         android:id="@+id/equation_menu_solverB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/solver_Result"
+        android:layout_alignRight="@+id/solver_Result"
+        android:layout_below="@+id/solver_Result"
         android:layout_marginTop="24dp"
         android:text="@string/Solver" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/equation_menu_theoryB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/equation_menu_solverB"
         android:layout_alignRight="@+id/equation_menu_solverB"
         android:layout_below="@+id/equation_menu_solverB"
         android:layout_marginTop="37dp"
-        android:text="@string/Exercises" />
+        android:text="@string/Theory" />
 
 </RelativeLayout>
