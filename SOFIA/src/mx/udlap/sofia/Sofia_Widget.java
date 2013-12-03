@@ -1,4 +1,4 @@
-package mx.udlap.sofia;
+/*package mx.udlap.sofia;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -88,11 +88,11 @@ public class Sofia_Widget extends AppWidgetProvider {
 		remoteViews.setTextViewText(R.id.widget_conjuntos, "Conjuntos:"+conjuntos_hechos+"/"+conjuntos_total);
 		remoteViews.setTextViewText(R.id.widget_triangulos, "Triangulos:"+triangulos_hechos+"/"+triangulos_total);
 	}*/
-	
+	/*
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
-		/*Acceso a la base de datos*/
+		/*Acceso a la base de datos*//*
 		SQLiteHelper usdbh = new SQLiteHelper(context, "Base de datos", null, 2);
 		SQLiteDatabase db = usdbh.getReadableDatabase();
 		Cursor c = db.rawQuery("SELECT * FROM ejercicios", null);
@@ -112,7 +112,7 @@ public class Sofia_Widget extends AppWidgetProvider {
 		db.close();
 		/*-------------------------*/
 		
-
+/*
 		RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
 		remoteViews.setTextViewText(R.id.widget_ecuaciones, "Ecuaciones:"+ecuaciones_hechos+"/"+ecuaciones_total);
 		remoteViews.setTextViewText(R.id.widget_conjuntos, "Conjuntos:"+conjuntos_hechos+"/"+conjuntos_total);
@@ -131,3 +131,4 @@ public class Sofia_Widget extends AppWidgetProvider {
 	
 
 }
+*/
