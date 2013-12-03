@@ -1,5 +1,11 @@
 package mx.udlap.settheory;
 
+import mx.udlap.sofia.R;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+
 public class Seeanswer_exercises extends Activity {
 
 	@Override
