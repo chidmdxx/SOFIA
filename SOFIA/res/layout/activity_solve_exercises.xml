@@ -10,7 +10,7 @@
     tools:context=".Solve_exercises" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/conjuntoA"
@@ -22,18 +22,18 @@
         android:width="@dimen/Titulo_ancho" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/solver_Result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignBottom="@+id/textResult"
+        android:layout_alignLeft="@+id/textResult"
         android:text="Conjunto A:" />
 
     <EditText
         android:id="@+id/conjuntoA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textResult"
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:height="10dp" />
@@ -42,13 +42,13 @@
         android:id="@+id/conjuntoB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/equation_definicion1"
+        android:layout_below="@+id/equation_definicion1"
         android:ems="10"
         android:height="10dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/equation_definicion1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/conjuntoA"
@@ -60,12 +60,12 @@
         android:id="@+id/universo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/equation_definicion2"
+        android:layout_below="@+id/equation_definicion2"
         android:ems="10" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/equation_definicion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/conjuntoB"
@@ -85,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lista1"
-        android:layout_toRightOf="@+id/textView4"
+        android:layout_toRightOf="@+id/equation_definicion2"
         android:text="Resolver" />
 
 </RelativeLayout>

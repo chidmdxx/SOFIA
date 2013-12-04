@@ -29,12 +29,17 @@ public class Triangulo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triangle);
     
-    etiquetaRespuesta = (TextView) findViewById(R.id.textView1);
-    bRespuesta = (Button) findViewById(R.id.button1);
-    bPasos = (Button) findViewById(R.id.button2);
+    etiquetaRespuesta = (TextView) findViewById(R.id.solver_Result);
+    bRespuesta = (Button) findViewById(R.id.equation_ResultB);
+    bPasos = (Button) findViewById(R.id.equation_menu_theoryB);
     bBorrar = (Button) findViewById(R.id.button4);
+<<<<<<< HEAD
     etiquetaRespuesta2 = (TextView) findViewById(R.id.textView2);
     etiquetaPasos = (TextView) findViewById(R.id.textView10);
+=======
+    etiquetaRespuesta2 = (TextView) findViewById(R.id.textResult);
+    //final TriangleSolver tri;
+>>>>>>> 0ff531c13168327099911e04bd61e77ef2473714
     
      A1 = (EditText) findViewById(R.id.editText1);
      B1 = (EditText) findViewById(R.id.editText3);

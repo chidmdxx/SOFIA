@@ -9,7 +9,7 @@
     tools:context=".Theory_description" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -21,19 +21,19 @@
         android:width="@dimen/Titulo_ancho" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/solver_Result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textResult"
         android:layout_centerHorizontal="true"
         android:height="@dimen/Description" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/equation_definicion1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/solver_Result"
+        android:layout_alignBottom="@+id/solver_Result"
         android:text="La teoría de conjuntos es una rama de las matemáticas que estudia las propiedades de los conjuntos: colecciones abstractas de objetos, consideradas como objetos en sí mismas. Los conjuntos y sus operaciones más elementales son una herramienta básica en la formulación de cualquier teoría matemática.
 Sin embargo, la teoría de los conjuntos es lo suficientemente rica como para construir el resto de objetos y estructuras de interés en matemáticas: números, funciones, figuras geométricas, ...; y junto con la lógica permite estudiar los fundamentos de esta. En la actualidad se acepta que el conjunto de axiomas de la teoría de Zermelo-Fraenkel es suficiente para desarrollar toda la matemática." />
 

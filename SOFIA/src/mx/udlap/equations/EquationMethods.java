@@ -2,7 +2,7 @@ package mx.udlap.equations;
 
 import android.annotation.SuppressLint;
 
-@SuppressLint("DefaultLocale")
+
 public class EquationMethods {
 	
 	public String solver(String equation){
@@ -11,15 +11,21 @@ public class EquationMethods {
         int a=0,b=0,c=0;
         Integer[] results;
         
+        
+//  while(equation != ""){
         try {
             results = parsePolynomial(equation);
+            //break;
             a = results[0];
             b = results[1];
             c = results[2];
+            
         } 
         catch (NumberFormatException e) {
             System.out.println("    Result: Malformed input polynomial");
         }
+      //}  
+        
         
         double temp1 = Math.sqrt(b * b - 4 * a * c);
         double root1 = (-b +  temp1) / (2*a) ;
@@ -35,6 +41,7 @@ public class EquationMethods {
 	
 	public String getX1X2(String equation){
 		String answer ="";
+		int decimales = 2;
 		int a=0,b=0,c=0;
         Integer[] results;
         
@@ -52,7 +59,7 @@ public class EquationMethods {
         double root1 = (-b +  temp1) / (2*a) ;
         double root2 = (-b -  temp1) / (2*a) ;
         if (temp1 >= 0.0){
-            answer = "X1 = "+Double.toString(root1)+" / X2 = "+ Double.toString(root2);
+            answer = "X1 = "+Double.toString(round(root1, decimales))+" / X2 = "+ Double.toString(round(root2, decimales));
         }
         else {
             answer = "The roots are not real numbers.";
@@ -60,7 +67,7 @@ public class EquationMethods {
         return answer;
 	}
 	
-	public int getA(String equation){
+	public static int getA(String equation){
         //Finding out the roots
         int a=0;
         Integer[] results;
@@ -71,12 +78,13 @@ public class EquationMethods {
             return a;
         } 
         catch (NumberFormatException e) {
-            System.out.println("    Result: Malformed input polynomial");
+            
+        	System.out.println("    Result: Malformed input polynomial");
         } 
         return a;
     }
 	
-	public int getB(String equation){
+	public static int getB(String equation){
         //Finding out the roots
         int b=0;
         Integer[] results;
@@ -84,14 +92,16 @@ public class EquationMethods {
         try {
             results = parsePolynomial(equation);
             b = results[1];
+           
         } 
         catch (NumberFormatException e) {
-            System.out.println("    Result: Malformed input polynomial");
+           // b = 0;
+        	System.out.println("    Result: Malformed input polynomial");
         } 
         return b;
     }
 	
-	public int getC(String equation){
+	public static int getC(String equation){
         //Finding out the roots
         int c=0;
         Integer[] results;
@@ -107,9 +117,16 @@ public class EquationMethods {
     }
 	
 	static Integer[] parsePolynomial(String input) {
-        if(input.indexOf("x") == -1) throw new NumberFormatException();
+        if(input.indexOf("x") == -1 || input.indexOf("x^2") == -1){
+        	throw new NumberFormatException();
+        } 
         if(input.indexOf("=") == -1) throw new NumberFormatException();
+        
         Integer[] result = new Integer[10];
+        result[0] = new Integer(0);
+        result[1] = new  Integer(0);
+        result[2] = new Integer(0);
+        
         //remove all whitespaces
         input = input.replaceAll(" ", "");
         String[] splitEquals = input.split("=");
@@ -129,7 +146,9 @@ public class EquationMethods {
         }
         else beforeEquals = input;
         //replace all the '-' by '+-' so we can now split everything using '+' while keeping the '-' intact
+        beforeEquals = beforeEquals.replaceAll("-x", "-1x");
         beforeEquals = beforeEquals.replaceAll("-", "+-");
+        
         //If there is a leading '+' remove it
         if(beforeEquals.indexOf("+") == 0) beforeEquals = beforeEquals.replaceFirst("\\+", "");
         String[] splitPlus = beforeEquals.split("\\+");
@@ -138,9 +157,11 @@ public class EquationMethods {
                 if(splitPlus[i].indexOf("x^2") >= 0) {
                 	if (splitPlus[i].indexOf("x^2") == 0){
                         //System.out.println("entro1");
-                        result[0] = 1;
+                        result[0] = 1;   
                      }
-                	 
+                	 /*if (splitPlus[i].indexOf("x^2") <0 && splitPlus[i].indexOf("x^2")>-2 ){
+                		result[0] = -1;
+                	} */
                 	else{
                         String[] splitX2 = splitPlus[i].split("x");
                         if(splitX2.length != 2) throw new NumberFormatException();
@@ -164,19 +185,108 @@ public class EquationMethods {
         return result;
     }
 	
-	public String PasoaPaso (int x, int y, int z, String ecuacion) {
-        int a = x;
+	public double division (double a, double b){
+		
+		double bi = a/b;
+		return bi;
+		
+	}
+	
+	public String GetEquation (int a, int b, int c){
+		String equation = "" ;
+		String vala = "";
+		String valb = "";
+		String valc = "";
+		
+		if (a == 1) {
+	    	vala =  "x\u00b2";  //xˆ2
+			
+	    	   if(b<0){ // b es negativo	 
+	    		   valb = (b+"x");//-n
+	    	   }  
+	    	   else{ // b es positivo
+	   				valb = ("+"+b+"x");	
+	   		   }   
+	    		   
+		   	   if(c <0){
+		   			valc = (c+"=");//-n
+		   					//equation +=("x\u00b2"+b+"x"+c+"= 0");
+		   		}
+		   		else{ // c es positivo
+		   			valc = ("+"+c+"=");	
+		   					
+		   		}
+	    }   
+	   	else{ // a ! 1
+	   		
+	   		   
+	   			if(a<0 ){ // a es negativo	 
+	    		  
+	    		   if(a==-1){
+	   	   			vala =  "-x\u00b2";  //xˆ2
+	   	   		   }
+	    		   vala = (a+"x\u00b2");//-n
+	    	   }  
+	    	   else{ // a es positivo
+	   				vala = (a+"x\u00b2");	
+	   		   } 
+	   		  if(b<0){ // b es negativo	 
+	    		   valb = (b+"x");//-n
+	    	   }  
+	    	   else{ // b es positivo
+	   				valb = ("+"+b+"x");	
+	   		   }   
+	    		   
+		   	   if(c <0){
+		   			valc = (c+"=");//-n
+		   					//equation +=("x\u00b2"+b+"x"+c+"= 0");
+		   		}
+		   		else{ // c es positivo
+		   			valc = ("+"+c+" =");	
+		   					
+		   		}		
+	    	  
+	       }
+		  equation +=(vala+valb+valc);
+		
+		return equation;
+		
+	}
+	
+	public String PasoaPaso (int x, int y, int z) {
+        
+		
+		int a = x;
         int b = y;
         int c = z;
+        /*
+        if(a==0 && b==0 && c==0){
+			String result = ("MAL ESCRITO");
+			return result;
+		}
+        if(a!=0 && b==0 && c!=0){
+			String result = ("MAL ESCRITO");
+			return result;
+		}
+        /*if( a==0){
+			String result = ("SOLO ECUACIONES DE SEGUNDO GRADO");
+			return result;
+		}*/
+        
         int b1 = b *b;
         int ac = a *c;
         int a1 = a *2;
         int ac1 = -4*ac;
         int b2 = b1+ac1;
+        int decimales = 2;
        
-        
-        float  bI = -b/a1;	
-        String.format("%.3g%n", bI);
+        String eq = GetEquation(a,b,c);
+
+        double  i = division(-b,a1);	
+        //String.format("%.3g%n", bi);
+
+        float  bI = -b/a1;
+
         double sq = Math.sqrt(b2);
         double x1 = (-1 * b) + sq;
         double x2 = (-1 * b) - sq;
@@ -190,35 +300,34 @@ public class EquationMethods {
        // double root2 = (-b -  temp1) / (2*a) ;
         
         
-       String result = ("Ecuacion: "+ecuacion+"\n"); 
-       //result+=(a+"x\u00b2"+b+"x"+c+"= 0");
-       result +=("\n");
-       result +=("Aplicando Formula general:\n\n"); 
+       String result = ("Ecuacion: "+eq+"\n\n");
+       
+       result +=("Aplicando Fórmula general:\n\n"); 
        //result += ("        --------------------------------------\n");
-       result +=("x = - ("+b+")	 \u00b1 \u221A "+b+"\u00b2 -4("+a+") ("+c+")\n");
+       result +=("x = - ("+round(b, decimales)+")	 \u00b1 \u221A "+round(b, decimales)+"\u00b2 -4("+round(a, decimales)+") ("+round(c, decimales)+")\n");
        result +=("         -----------------------------\n");
-       result +=("                        2 ("+a+")\n");
+       result +=("                        2 ("+round(a, decimales)+")\n");
        
        result +=("\n");
        
        result +=("Paso 1:\n\n");
-       result +=("x = - ("+b+") \u00b1 \u221A "+b1+"  -4("+ac+")\n");
+       result +=("x = - ("+round(b, decimales)+") \u00b1 \u221A "+round(b1, decimales)+"  -4("+round(ac, decimales)+")\n");
        result +=("         ------------------------\n");
-       result +=("                      ("+a1+")\n");
+       result +=("                      "+round(a1, 2)+"\n");
        result +=("\n");
        
        
        result +=("Paso 2:\n\n");
-       result +=("x = - ("+b+") \u00b1 \u221A "+b1+" + ("+ac1+")\n");
+       result +=("x = - ("+round(b, decimales)+") \u00b1 \u221A "+round(b1, decimales)+" + ("+round(ac1, decimales)+")\n");
        result +=("        --------------------------\n");
-       result +=("                       ("+a1+")\n");
+       result +=("                       "+round(a1, decimales)+"\n");
        result +=("\n");
       
        
        result +=("Paso 3:\n\n");
-       result +=("x = - ("+b+") \u00b1 \u221A ("+b2+")\n");
+       result +=("x = - ("+round(b, decimales)+") \u00b1 \u221A ("+round(b2, decimales)+")\n");
        result +=("        -----------------\n");
-       result +=("                 ("+a1+")\n");
+       result +=("                 "+round(a1, decimales)+"\n");
        result +=("\n");
        
        if(b2 < 0){
@@ -226,61 +335,146 @@ public class EquationMethods {
     	
     	
     	   result +=("Paso 4:\n\n");
-           result +=("x1 = - ("+b+") + ("+b2+") i\n");
+           result +=("x1 = - ("+round(b, decimales)+") + ("+round(b2, decimales)+") i\n");
            result +=("           ------------\n");
-           result +=("                 ("+a1+")\n");
+           result +=("                 "+round(a1, decimales)+"\n");
            
-           result +=("x2 = - ("+b+") - ("+b2+") i\n");
+           result +=("x2 = - ("+round(b, decimales)+") - ("+round(b2, decimales)+") i\n");
            result +=("           ------------\n");
-           result +=("                 ("+a1+")\n");
+           result +=("                 "+round(a1, decimales)+"\n");
            result +=("\n");
            
            
            result +=("Resultado:\n\n");
-           result +=("x1 = - ("+bI+") + ("+b2+") i\n");
-           result +=("x2 = - ("+bI+") - ("+b2+") i\n");
-          
-         
+
+           //result +=("x1 = - ("+i+") + ("+b2+") i\n");
+           //result +=("x2 = - ("+i+") - ("+b2+") i\n");
+
+           result +=("x1 = - ("+round(i, decimales)+") + ("+round(b2, decimales)+") i\n");
+           result +=("x2 = - ("+round(i, decimales)+") - ("+round(b2, decimales)+") i\n");
+
         
        }
        
        else{
        result +=("Paso 4:\n\n");
-       result +=("x = - ("+b+") \u00b1 ("+sq+")\n");
+       result +=("x = - ("+round(b, decimales)+") \u00b1 ("+round(sq, decimales)+")\n");
        result +=("          --------------\n");
-       result +=("                ("+a1+")\n");
+       result +=("                "+round(a1, decimales)+"\n");
        result +=("\n");
        
        result +=("Paso 5:\n\n");
-       result +=("x1 = - ("+b+") + ("+sq+")\n");
+       result +=("x1 = - ("+round(b, decimales)+") + ("+round(sq, decimales)+")\n");
        result +=("           --------------\n");
-       result +=("                 ("+a1+")\n");
+       result +=("                 "+round(a1, 2)+"\n");
        result +=("\n");
        
-       result +=("x2 = - ("+b+") - ("+sq+")\n");
+       result +=("x2 = - ("+round(b, decimales)+") - ("+round(sq, decimales)+")\n");
        result +=("           --------------\n");
-       result +=("                 ("+a1+")\n");
+       result +=("                 "+round(a1, decimales)+"\n");
        result +=("\n");
        
        result +=("Paso 6:\n\n");
-       result +=("x1 =  ("+x1+")\n");
+       result +=("x1 =  ("+round(x1, decimales)+")\n");
        result +=("          ------\n");
-       result +=("           ("+a1+")\n");
+       result +=("           "+round(a1, decimales)+"\n");
        result +=("\n");
        
-       result +=("x2 =  ("+x2+")\n");
+       result +=("x2 =  ("+round(x2, decimales)+")\n");
        result +=("          ------\n");
-       result +=("           ("+a1+")\n");
+       result +=("           "+round(a1, decimales)+"\n");
        result +=("\n");
        
        result +=("Resultado:\n\n");
        result +=("\n");
-       result +=("x1 =  ("+xf1+")\n");
-       result +=("x2 = ("+xf2+")\n");
+       result +=("x1 =  ("+round(xf1, decimales)+")\n");
+       result +=("x2 = ("+round(xf2, decimales)+")\n");
        
        } 
        return (result);
 	}
+
+	public double getX1(int x, int y, int z){
+		int a = x;
+        int b = y;
+        int c = z;
+        int b1 = b *b;
+        int ac = a *c;
+        int a1 = a *2;
+        int ac1 = -4*ac;
+        int b2 = b1+ac1;
+        int decimales = 2;
+       
+        double sq = Math.sqrt(b2);
+        double x1 = (-1 * b) + sq;
+        double xf1 = x1 /a1;
+        
+		return round(xf1, decimales);
+	}
 	
+	public double getX2(int x, int y, int z){
+		int a = x;
+        int b = y;
+        int c = z;
+        int b1 = b *b;
+        int ac = a *c;
+        int a1 = a *2;
+        int ac1 = -4*ac;
+        int b2 = b1+ac1;
+        int decimales = 2;
+       
+        double sq = Math.sqrt(b2);
+        double x2 = (-1 * b) - sq;
+        double xf2= x2 /a1;
+        
+		return round(xf2, decimales);
+	}
+	
+	public  int getArraySize(double x1, double x2){
+        double mayor=0,menor=0;
+        int size=0;
+        if (x1 > x2){
+            x1 = x1 + 5;
+            x2 = x2 - 5;
+            mayor=x1;
+            menor=x2;
+        }
+        if (x2 > x1){
+            x2 = x2 + 5;
+            x1 = x1 - 5;
+            mayor=x2;
+            menor=x1;
+        }
+        if (x1==x2){
+            x1 = x1 + 5;
+            x2 = x2 + 5;
+            mayor=x1;
+            menor=x2;
+        }
+        for (int i=(int)menor; i<=mayor; i++){
+            size++;
+        }
+        return size;
+    }
+	
+	public static int getMenorX(double x1, double x2){
+        double x;
+        if (x1<x2)
+            x1 = x1 - 5;
+            x = x1;
+        if (x2<x1)
+            x2 = x2 - 5;
+            x = x2;
+        return (int)x;
+    }
+	
+	public static double round(double value, int places) { //Rounds decimals
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    long factor = (long) Math.pow(10, places);
+	    value = value * factor;
+	    long tmp = Math.round(value);
+	    return (double) tmp / factor;
+	}
 	
 }

@@ -12,15 +12,15 @@
     <string name="Theory">Teoría</string>
     <string name="Exercises">Ejercicios</string>
     <string name="Solver">Resolver</string>
-    <string name="Set_theory">Teoria de Conjuntos</string>
+    <string name="Set_theory">Teoría de Conjuntos</string>
     <string name="Theory_description">jhjfrhfjehfedjfehdfhefj f jfhe dfhefjheijfeh fijefhe fehf ih djh ejfhed fhedjf ehd       fh efh eifh efhriufhe fue fheufhefieufhefuiejhfefu efhefuh eh eudih   fe df hediufh efheufhef eiufh eifh euif hefiueh fer uer fuerfehrf uerfheiufh efuher fiuer fher fehru fher eiurh eiuh euirh eiuh euihuerheruherui        heuirhriuerhteruther tuhereh egheruihriutheriuther tuerhtuerhteruthert erth e</string>
     <string name="Solve">Resolver</string>
     <string name="See_answer">Ver Respuesta</string>
-    <string name="title_activity_main_menu">Menú Principal</string>
+    <string name="title_activity_main_menu">Sofia</string>
     <string name="resolver">RESOLVER</string>
     <string name="version2">version2</string>
     <string name="secuencia">secuencia</string>
-    <string name="triangulo">triangulo</string>
+    <string name="triangulo">triángulo</string>
     <string name="distancias">distancias</string>
     <string name="grados">grados</string>
     <string name="a">a</string>
@@ -38,6 +38,15 @@
     <string name="Equation_hint">2x^2+5x-10=0</string>
     <string name="Equation_menu_title">Menu Ecuaciones</string>
     <string name="borrar_valores">Borrar Valores</string>
+<<<<<<< HEAD
     <string name="hola">hola</string>
+=======
+    <string name="widget_text">SOFIA</string>
+    <string name="Equation_solverB">Resultado</string>
+    <string name="Blank_string"></string>
+    <string name="title_activity_equation__theory">Equation_Theory</string>
+    <string name="Equation_Definition">Definicion:</string>
+    <string name="Equation_definition3">es de la forma:</string>
+>>>>>>> 0ff531c13168327099911e04bd61e77ef2473714
 
 </resources>

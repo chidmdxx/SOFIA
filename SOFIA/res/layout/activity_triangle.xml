@@ -31,7 +31,7 @@
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/equation_ResultB"
         android:layout_marginBottom="140dp"
         android:layout_marginLeft="29dp"
         android:layout_toRightOf="@+id/editText3"
@@ -45,14 +45,14 @@
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/equation_ResultB"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="26dp"
         android:ems="5"
         android:inputType="number" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/equation_ResultB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView1"
@@ -60,10 +60,10 @@
         android:text="@string/resolver" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBottom="@+id/solver_Result"
         android:layout_alignRight="@+id/editText1" />
 
     <EditText
@@ -86,10 +86,10 @@
         android:inputType="numberDecimal" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/solver_Result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
+        android:layout_alignLeft="@+id/equation_ResultB"
         android:layout_alignParentTop="true"
         android:layout_marginTop="15dp" />
 
@@ -104,12 +104,12 @@
         android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/equation_menu_theoryB"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_alignBaseline="@+id/equation_ResultB"
+        android:layout_alignBottom="@+id/equation_ResultB"
         android:layout_alignRight="@+id/imageView1"
         android:text="@string/secuencia" 
         android:visibility="gone"/>
@@ -119,8 +119,8 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_alignBaseline="@+id/equation_ResultB"
+        android:layout_alignBottom="@+id/equation_ResultB"
         android:layout_alignLeft="@+id/imageView1"
         android:text="@string/version2" />
 

@@ -5,10 +5,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="Botones_grandes">70sp</dimen>
     <dimen name="Botones_grandes_ancho">260sp</dimen>
-    <dimen name="Titulo">100px</dimen>
-    <dimen name="Titulo_ancho">300px</dimen>
+    <dimen name="Titulo">75sp</dimen>
+    <dimen name="Titulo_ancho">250sp</dimen>
     <dimen name="Description">350px</dimen>
-    <dimen name="Titulo_size">50px</dimen>
+    <dimen name="Titulo_size">25sp</dimen>
     <dimen name="Botones_pequenos">50sp</dimen>
     <dimen name="Botones_pequenos_ancho">50sp</dimen>
     

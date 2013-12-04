@@ -10,7 +10,7 @@ public class SetTheoryOperations {
 	
 	public static void clearOperacion()
 	{
-		Operacion="";
+		Operacion="La forma de llegar al resultado es:"+"\n";
 	}
 	
 	public static List<String> Union (List<String> A, List<String>B)

@@ -27,12 +27,24 @@ public class Solve_exercises extends Activity {
 	List<String> A,B,U,Resultado;
 	Spinner lista;
 	String [] datos ={"--Operaciones--",
-					  "Union    (∪)",
-					  "Interseccion   (∩)",
+					  "Union    (���)",
+					  "Interseccion   (���)",
+
 					  "Diferencia    (-)",
 					  "Complemento de A    (A')",
 					  "Complemento de B    (B')",
-					  "(A ∪   B)'"};
+					  "(A ���   B)'",
+	 				  "(A ���   B)'",
+
+					  "Diferencia    (A-B)",
+					  "Complemento de A    (A')",
+					  "Complemento de B    (B')",
+					  "(A  ���   B)'",
+	 				  "(A  ���   B)'",
+	 				  "Diferencia (B-A)",
+	 				  "(A-B)'",
+	 				  "(B-A)'"};
+
 	
 	int  variable;
 	
@@ -84,7 +96,54 @@ public class Solve_exercises extends Activity {
 					case 6:
 						variable = 6;
 						break;
+					case 7:
+						variable = 7;
+						break;	
 						
+					case 8:
+						variable = 8;
+						leerLosConjuntos();
+						if(conjuntosCorrectos)
+						{
+							SetTheoryOperations.clearOperacion();
+							Resultado=SetTheoryOperations.Diference(B, A);
+							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+							//startActivity(sendTo);
+						}
+						
+						//EditText Resul = (EditText) findViewById(R.id.Resul);
+						//Resul.setText(Resultado.toString());
+						break;	
+					case 9:
+						variable = 9;
+						leerLosConjuntos();
+						if(conjuntosCorrectos)
+						{
+							SetTheoryOperations.clearOperacion();
+							Resultado=SetTheoryOperations.Diference(A, B);
+							Resultado=SetTheoryOperations.Complement(U, Resultado);
+							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+							//startActivity(sendTo);
+						}
+						
+						//Resul = (EditText) findViewById(R.id.Resul);
+						//Resul.setText(Resultado.toString());
+						break;	
+					case 10:
+						variable = 10;
+						leerLosConjuntos();
+						if(conjuntosCorrectos)
+						{
+							SetTheoryOperations.clearOperacion();
+							Resultado=SetTheoryOperations.Diference(B, A);
+							Resultado=SetTheoryOperations.Complement(U, Resultado);
+							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+							//startActivity(sendTo);
+						}
+						
+						//Resul = (EditText) findViewById(R.id.Resul);
+						//Resul.setText(Resultado.toString());
+						break;	
 				
 				}
 				
@@ -182,8 +241,57 @@ public class Solve_exercises extends Activity {
 						startActivity(sendTo);
 					}
 				}
-				
-				
+				if (variable == 7)
+				{	
+					sendTo = new Intent(Solve_exercises.this, Solve_solver.class);
+					leerLosConjuntos();
+					if(conjuntosCorrectos)
+					{
+						SetTheoryOperations.clearOperacion();
+						Resultado=SetTheoryOperations.Intersection(A, B);
+						Resultado=SetTheoryOperations.Complement(U, Resultado);
+						sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+						startActivity(sendTo);
+					}
+				}
+				if (variable == 8)
+				{	
+					sendTo = new Intent(Solve_exercises.this, Solve_solver.class);
+					leerLosConjuntos();
+					if(conjuntosCorrectos)
+					{
+						SetTheoryOperations.clearOperacion();
+						Resultado=SetTheoryOperations.Diference(B, A);
+						sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+						startActivity(sendTo);
+					}
+				}
+				if (variable == 9)
+				{	
+					sendTo = new Intent(Solve_exercises.this, Solve_solver.class);
+					leerLosConjuntos();
+					if(conjuntosCorrectos)
+					{
+						SetTheoryOperations.clearOperacion();
+						Resultado=SetTheoryOperations.Diference(A, B);
+						Resultado=SetTheoryOperations.Complement(U, Resultado);
+						sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+						startActivity(sendTo);
+					}
+				}
+				if (variable == 10)
+				{	
+					sendTo = new Intent(Solve_exercises.this, Solve_solver.class);
+					leerLosConjuntos();
+					if(conjuntosCorrectos)
+					{
+						SetTheoryOperations.clearOperacion();
+						Resultado=SetTheoryOperations.Diference(B, A);
+						Resultado=SetTheoryOperations.Complement(U, Resultado);
+						sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
+						startActivity(sendTo);
+					}
+				}
 			}
 		});
 	}
