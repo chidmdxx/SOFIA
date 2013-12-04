@@ -38,15 +38,15 @@
     <string name="Equation_hint">2x^2+5x-10=0</string>
     <string name="Equation_menu_title">Menu Ecuaciones</string>
     <string name="borrar_valores">Borrar Valores</string>
-<<<<<<< HEAD
+<!-- <<<<<< HEAD -->
     <string name="hola">hola</string>
-=======
+<!-- ======= -->
     <string name="widget_text">SOFIA</string>
     <string name="Equation_solverB">Resultado</string>
     <string name="Blank_string"></string>
     <string name="title_activity_equation__theory">Equation_Theory</string>
     <string name="Equation_Definition">Definicion:</string>
     <string name="Equation_definition3">es de la forma:</string>
->>>>>>> 0ff531c13168327099911e04bd61e77ef2473714
+<!--  >>>>>>> 0ff531c13168327099911e04bd61e77ef2473714-->
 
 </resources>
