@@ -3,10 +3,12 @@ package com.example.sofiaTriangulo;
 
 import mx.udlap.sofia.R;
 
+import android.R.color;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +21,7 @@ public class Triangulo extends Activity {
 	// Double editText2;
 	// Double editText3;
 	EditText A1,B1,C1, Alfa1, Beta1, Gamma1 ;
-	Button bRespuesta, bPasos, bVersion, bBorrar;
+	Button bRespuesta, bPasos, bVersion, bBorrar, bRegresar;
 	TextView etiquetaRespuesta, etiquetaRespuesta2, etiquetaPasos ;
 	double[] G;
 	Double AText, BText, CText, AlText, BeText, GaText; 
@@ -29,17 +31,17 @@ public class Triangulo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triangle);
     
-    etiquetaRespuesta = (TextView) findViewById(R.id.solver_Result);
-    bRespuesta = (Button) findViewById(R.id.equation_ResultB);
-    bPasos = (Button) findViewById(R.id.equation_menu_theoryB);
+    etiquetaRespuesta = (TextView) findViewById(R.id.textView1);
+    bRespuesta = (Button) findViewById(R.id.button1);
+    bPasos = (Button) findViewById(R.id.button2);
     bBorrar = (Button) findViewById(R.id.button4);
-<<<<<<< HEAD
+    //bRegresar = (Button) findViewById(R.id.button31);
     etiquetaRespuesta2 = (TextView) findViewById(R.id.textView2);
     etiquetaPasos = (TextView) findViewById(R.id.textView10);
-=======
-    etiquetaRespuesta2 = (TextView) findViewById(R.id.textResult);
-    //final TriangleSolver tri;
->>>>>>> 0ff531c13168327099911e04bd61e77ef2473714
+    bRespuesta.setBackgroundColor(Color.GREEN);
+    bPasos.setBackgroundColor(Color.RED);
+    //bBorrar.setBackgroundColor(Color.BLUE);
+    //bVersion.setBackgroundColor(Color.BLUE);
     
      A1 = (EditText) findViewById(R.id.editText1);
      B1 = (EditText) findViewById(R.id.editText3);
@@ -70,7 +72,18 @@ public class Triangulo extends Activity {
 		}
     	 
      };
-		findViewById(R.id.button3).setOnClickListener(vista);*/
+		findViewById(R.id.button3).setOnClickListener(vista);
+	
+	/*bRegresar.setOnClickListener(new View.OnClickListener() 
+	{
+		
+		@Override
+		public void onClick(View v) 
+		{
+			setContentView(R.layout.activity_triangle);
+			
+		}
+	});*/
 		
 	bPasos.setOnClickListener(new View.OnClickListener() 
 	{
@@ -81,10 +94,25 @@ public class Triangulo extends Activity {
 			String pasos;
 			setContentView(R.layout.triangulo_pasos);
 			etiquetaPasos = (TextView) findViewById(R.id.textView10);
+
+		    //bRegresar = (Button) findViewById(R.id.button31);
 			pasos = TriangleSolver.pasoPorPaso(AText, BText, CText, AlText, BeText, GaText);
 			etiquetaPasos.setText(pasos);
+			/*bRegresar.setOnClickListener(new View.OnClickListener() 
+			{
+				
+				@SuppressWarnings("unused")
+				@Override
+				public void onClick(View v) 
+				{
+					setContentView(R.layout.activity_triangle);
+					
+				}
+			});*/
+			
 		}
 	});
+	
 		
 	bBorrar.setOnClickListener(new View.OnClickListener() {
 			
@@ -151,6 +179,7 @@ public class Triangulo extends Activity {
 				Gamma1.setText(String.valueOf((float)(G[5])));
 				bPasos.setVisibility(View.VISIBLE);
 				bBorrar.setVisibility(View.VISIBLE);
+				bBorrar.setBackgroundColor(Color.BLUE);
 
 				
 			
