@@ -117,6 +117,22 @@ public class EquationMethods {
     }
 	
 	
+
+	public static int getD(String equation){
+        //Finding out the roots
+        int d=0;
+        Integer[] results;
+        
+        try {
+            results = parsePolynomial(equation);
+            d = results[3];
+        } 
+        catch (NumberFormatException e) {
+            System.out.println("    Result: Malformed input polynomial");
+        } 
+        return d;
+    }
+	
 	static Integer[] parsePolynomial(String input) {
         if(input.indexOf("x") == -1 || input.indexOf("x^2") == -1){
         	throw new NumberFormatException();
@@ -127,6 +143,10 @@ public class EquationMethods {
         result[0] = new Integer(0);
         result[1] = new  Integer(0);
         result[2] = new Integer(0);
+        
+        
+       result[3] = new Integer(0);
+        
         
         //remove all whitespaces
         input = input.replaceAll(" ", "");
@@ -144,6 +164,9 @@ public class EquationMethods {
                 beforeEquals = splitEquals[1];
             }
                 result[2] = new Integer(constantAfterEquals);
+                result[3] =  new Integer(constantAfterEquals);
+            
+                
         }
         else beforeEquals = input;
         //replace all the '-' by '+-' so we can now split everything using '+' while keeping the '-' intact
@@ -182,6 +205,8 @@ public class EquationMethods {
                 else {
                     result[2] = (new Integer(splitPlus[i]) - result[2]);
                 }
+                
+                
         } 
         return result;
     }
@@ -198,6 +223,7 @@ public class EquationMethods {
 		String vala = "";
 		String valb = "";
 		String valc = "";
+		String vald = "";
 		
 		if (a == 1) {
 	    	vala =  "x\u00b2";  //xˆ2
@@ -254,22 +280,13 @@ public class EquationMethods {
 		
 	}
 	
-<<<<<<< HEAD
-	
-	
-=======
->>>>>>> cad387dd93a006c85040af2bfb44056881bae559
-	public String PasoaPaso (int x, int y, int z) {
+	public String PasoaPaso (int x, int y, int z, String equation) {
         
 		
 		int a = x;
         int b = y;
         int c = z;
-<<<<<<< HEAD
-        
-=======
         /*
->>>>>>> cad387dd93a006c85040af2bfb44056881bae559
         if(a==0 && b==0 && c==0){
 			String result = ("MAL ESCRITO");
 			return result;
@@ -291,6 +308,7 @@ public class EquationMethods {
         int decimales = 2;
        
         String eq = GetEquation(a,b,c);
+        int d = getD(equation);
 
         double  i = division(-b,a1);	
         //String.format("%.3g%n", bi);
@@ -310,7 +328,7 @@ public class EquationMethods {
        // double root2 = (-b -  temp1) / (2*a) ;
         
         
-       String result = ("Ecuacion: "+eq+"\n\n");
+       String result = ("Ecuacion: "+eq+d+"\n\n");
        
        result +=("Aplicando Fórmula general:\n\n"); 
        //result += ("        --------------------------------------\n");
@@ -357,8 +375,7 @@ public class EquationMethods {
            
            result +=("Resultado:\n\n");
 
-           //result +=("x1 = - ("+i+") + ("+b2+") i\n");
-           //result +=("x2 = - ("+i+") - ("+b2+") i\n");
+          
 
            result +=("x1 = - ("+round(i, decimales)+") + ("+round(b2, decimales)+") i\n");
            result +=("x2 = - ("+round(i, decimales)+") - ("+round(b2, decimales)+") i\n");

@@ -27,16 +27,24 @@ public class Solve_exercises extends Activity {
 	List<String> A,B,U,Resultado;
 	Spinner lista;
 	String [] datos ={"--Operaciones--",
-					  "Union    (∪)",
-					  "Interseccion   (∩)",
+					  "Union    (���)",
+					  "Interseccion   (���)",
+
+					  "Diferencia    (-)",
+					  "Complemento de A    (A')",
+					  "Complemento de B    (B')",
+					  "(A ���   B)'",
+	 				  "(A ���   B)'",
+
 					  "Diferencia    (A-B)",
 					  "Complemento de A    (A')",
 					  "Complemento de B    (B')",
-					  "(A  ∪   B)'",
-	 				  "(A  ∩   B)'",
+					  "(A  ���   B)'",
+	 				  "(A  ���   B)'",
 	 				  "Diferencia (B-A)",
 	 				  "(A-B)'",
 	 				  "(B-A)'"};
+
 	
 	int  variable;
 	
@@ -59,119 +67,37 @@ public class Solve_exercises extends Activity {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				
-				EditText Resul;
-				
 				switch (arg2)
 				{
 					case 1:
 						
 						variable = 1;
-						leerLosConjuntos();
-						if(conjuntosCorrectos)
-						{
-							SetTheoryOperations.clearOperacion();
-							Resultado=SetTheoryOperations.Union(A, B);
-							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
-							//startActivity(sendTo);
-						}
-						
-						Resul = (EditText) findViewById(R.id.Resul);
-						 Resul.setText(Resultado.toString());
 						break;
 					
 					case 2:
 						
 						variable = 2;
-						leerLosConjuntos();
-						if(conjuntosCorrectos)
-						{
-							SetTheoryOperations.clearOperacion();
-							Resultado=SetTheoryOperations.Intersection(A, B);
-							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
-							//startActivity(sendTo);
-						}
-						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
 						break;
 					
 					case 3:
 						
 						variable = 3;
-						leerLosConjuntos();
-						if(conjuntosCorrectos)
-						{
-							SetTheoryOperations.clearOperacion();
-							Resultado=SetTheoryOperations.Diference(A, B);
-							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
-							//startActivity(sendTo);
-						}
-						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
 						break;
 					
 					case 4:
 						
 						variable = 4;
-						leerLosConjuntos();
-						if(conjuntosCorrectos)
-						{
-							SetTheoryOperations.clearOperacion();
-							Resultado=SetTheoryOperations.Complement(U, A);
-							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
-							//startActivity(sendTo);
-						}
-						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
 						break;
 						
 					case 5:
 						
 						variable = 5;
-						leerLosConjuntos();
-						if(conjuntosCorrectos)
-						{
-							SetTheoryOperations.clearOperacion();
-							Resultado=SetTheoryOperations.Complement(U, B);
-							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
-							//startActivity(sendTo);
-						}
-						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
 						break;
 					case 6:
 						variable = 6;
-						leerLosConjuntos();
-						if(conjuntosCorrectos)
-						{
-							SetTheoryOperations.clearOperacion();
-							Resultado=SetTheoryOperations.Union(A, B);
-							Resultado=SetTheoryOperations.Complement(U, Resultado);
-							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
-							//startActivity(sendTo);
-						}
-						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
-						
 						break;
 					case 7:
 						variable = 7;
-						leerLosConjuntos();
-						if(conjuntosCorrectos)
-						{
-							SetTheoryOperations.clearOperacion();
-							Resultado=SetTheoryOperations.Intersection(A, B);
-							Resultado=SetTheoryOperations.Complement(U, Resultado);
-							//sendTo.putExtra("resultado", SetTheoryOperations.Operacion+Resultado.toString());
-							//startActivity(sendTo);
-						}
-						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
 						break;	
 						
 					case 8:
@@ -185,8 +111,8 @@ public class Solve_exercises extends Activity {
 							//startActivity(sendTo);
 						}
 						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
+						//EditText Resul = (EditText) findViewById(R.id.Resul);
+						//Resul.setText(Resultado.toString());
 						break;	
 					case 9:
 						variable = 9;
@@ -200,8 +126,8 @@ public class Solve_exercises extends Activity {
 							//startActivity(sendTo);
 						}
 						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
+						//Resul = (EditText) findViewById(R.id.Resul);
+						//Resul.setText(Resultado.toString());
 						break;	
 					case 10:
 						variable = 10;
@@ -215,8 +141,8 @@ public class Solve_exercises extends Activity {
 							//startActivity(sendTo);
 						}
 						
-						Resul = (EditText) findViewById(R.id.Resul);
-						Resul.setText(Resultado.toString());
+						//Resul = (EditText) findViewById(R.id.Resul);
+						//Resul.setText(Resultado.toString());
 						break;	
 				
 				}
