@@ -3,10 +3,12 @@ package com.example.sofiaTriangulo;
 
 import mx.udlap.sofia.R;
 
+import android.R.color;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +21,7 @@ public class Triangulo extends Activity {
 	// Double editText2;
 	// Double editText3;
 	EditText A1,B1,C1, Alfa1, Beta1, Gamma1 ;
-	Button bRespuesta, bPasos, bVersion, bBorrar;
+	Button bRespuesta, bPasos, bVersion, bBorrar, bRegresar;
 	TextView etiquetaRespuesta, etiquetaRespuesta2, etiquetaPasos ;
 	double[] G;
 	Double AText, BText, CText, AlText, BeText, GaText; 
@@ -29,10 +31,11 @@ public class Triangulo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triangle);
     
-    etiquetaRespuesta = (TextView) findViewById(R.id.solver_Result);
-    bRespuesta = (Button) findViewById(R.id.equation_ResultB);
-    bPasos = (Button) findViewById(R.id.equation_menu_theoryB);
+    etiquetaRespuesta = (TextView) findViewById(R.id.textView1);
+    bRespuesta = (Button) findViewById(R.id.button1);
+    bPasos = (Button) findViewById(R.id.button2);
     bBorrar = (Button) findViewById(R.id.button4);
+<<<<<<< HEAD
 //<<<<<<< HEAD
     etiquetaRespuesta2 = (TextView) findViewById(R.id.textView2);
     etiquetaPasos = (TextView) findViewById(R.id.textView10);
@@ -40,6 +43,15 @@ public class Triangulo extends Activity {
     etiquetaRespuesta2 = (TextView) findViewById(R.id.textResult);
     //final TriangleSolver tri;
 //>>>>>>> 0ff531c13168327099911e04bd61e77ef2473714
+=======
+    //bRegresar = (Button) findViewById(R.id.button31);
+    etiquetaRespuesta2 = (TextView) findViewById(R.id.textView2);
+    etiquetaPasos = (TextView) findViewById(R.id.textView10);
+    bRespuesta.setBackgroundColor(Color.GREEN);
+    bPasos.setBackgroundColor(Color.RED);
+    //bBorrar.setBackgroundColor(Color.BLUE);
+    //bVersion.setBackgroundColor(Color.BLUE);
+>>>>>>> 25a29cc69e8b16350c5c5843e58be74f45f6143c
     
      A1 = (EditText) findViewById(R.id.editText1);
      B1 = (EditText) findViewById(R.id.editText3);
@@ -71,6 +83,17 @@ public class Triangulo extends Activity {
     	 
      };
 		findViewById(R.id.button3).setOnClickListener(vista);*/
+	
+	/*bRegresar.setOnClickListener(new View.OnClickListener() 
+	{
+		
+		@Override
+		public void onClick(View v) 
+		{
+			setContentView(R.layout.activity_triangle);
+			
+		}
+	});*/
 		
 	bPasos.setOnClickListener(new View.OnClickListener() 
 	{
@@ -81,10 +104,25 @@ public class Triangulo extends Activity {
 			String pasos;
 			setContentView(R.layout.triangulo_pasos);
 			etiquetaPasos = (TextView) findViewById(R.id.textView10);
+
+		    //bRegresar = (Button) findViewById(R.id.button31);
 			pasos = TriangleSolver.pasoPorPaso(AText, BText, CText, AlText, BeText, GaText);
 			etiquetaPasos.setText(pasos);
+			/*bRegresar.setOnClickListener(new View.OnClickListener() 
+			{
+				
+				@SuppressWarnings("unused")
+				@Override
+				public void onClick(View v) 
+				{
+					setContentView(R.layout.activity_triangle);
+					
+				}
+			});*/
+			
 		}
 	});
+	
 		
 	bBorrar.setOnClickListener(new View.OnClickListener() {
 			
@@ -133,8 +171,8 @@ public class Triangulo extends Activity {
 			double Gamma = Double.valueOf(Gamma33).doubleValue();*/
 			
 			
-			if(validacion(A,B,C,Alfa,Beta,Gamma))
-			{
+			//if(validacion(A,B,C,Alfa,Beta,Gamma))
+			
 				String info = "los lados si forman un tringulo";
 				etiquetaRespuesta.setText(info);
 				TriangleSolver
@@ -151,21 +189,22 @@ public class Triangulo extends Activity {
 				Gamma1.setText(String.valueOf((float)(G[5])));
 				bPasos.setVisibility(View.VISIBLE);
 				bBorrar.setVisibility(View.VISIBLE);
+				bBorrar.setBackgroundColor(Color.BLUE);
 
 				
 			
-			}
 			
-			else
+			
+			/*else
 			{
 				String info = "los datos que diste no forman un triangulo, vuelve a intentarlo";
 				etiquetaRespuesta.setText(info);
-			}
+			}*/
 			
 		}
 
 		public boolean validacion(double a, double b, double c, double alfa, double beta, double gamma) {
-			if((a+b)>c & (b+c)>a & (a+c)>b || a > 0 & b >0 &  alfa > 0 || a > 0 & c >0 &  alfa > 0||a > 0 & c >0 &  alfa > 0 ||a > 0 & b >0 &  beta > 0 ||a > 0 & c >0 &  beta > 0 ||a > 0 & b >0 &  gamma > 0 ||  alfa + beta+ gamma == 180 )
+			if((a+b)>c & (b+c)>a & (a+c)>b|| alfa > 0 & b > 0 & gamma > 0  || a > 0 & b >0 &  alfa > 0 || a > 0 & c >0 &  alfa > 0||a > 0 & c >0 &  alfa > 0 ||a > 0 & b >0 &  beta > 0 ||a > 0 & c >0 &  beta > 0 ||a > 0 & b >0 &  gamma > 0 ||  alfa + beta+ gamma == 180 )
 				{
 					return true;
 				}
