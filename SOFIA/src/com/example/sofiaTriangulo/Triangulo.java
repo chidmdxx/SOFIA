@@ -72,7 +72,7 @@ public class Triangulo extends Activity {
 		}
     	 
      };
-		findViewById(R.id.button3).setOnClickListener(vista);
+		findViewById(R.id.button3).setOnClickListener(vista);*/
 	
 	/*bRegresar.setOnClickListener(new View.OnClickListener() 
 	{
@@ -161,8 +161,8 @@ public class Triangulo extends Activity {
 			double Gamma = Double.valueOf(Gamma33).doubleValue();*/
 			
 			
-			if(validacion(A,B,C,Alfa,Beta,Gamma))
-			{
+			//if(validacion(A,B,C,Alfa,Beta,Gamma))
+			
 				String info = "los lados si forman un tringulo";
 				etiquetaRespuesta.setText(info);
 				TriangleSolver
@@ -183,18 +183,18 @@ public class Triangulo extends Activity {
 
 				
 			
-			}
 			
-			else
+			
+			/*else
 			{
 				String info = "los datos que diste no forman un triangulo, vuelve a intentarlo";
 				etiquetaRespuesta.setText(info);
-			}
+			}*/
 			
 		}
 
 		public boolean validacion(double a, double b, double c, double alfa, double beta, double gamma) {
-			if((a+b)>c & (b+c)>a & (a+c)>b || a > 0 & b >0 &  alfa > 0 || a > 0 & c >0 &  alfa > 0||a > 0 & c >0 &  alfa > 0 ||a > 0 & b >0 &  beta > 0 ||a > 0 & c >0 &  beta > 0 ||a > 0 & b >0 &  gamma > 0 ||  alfa + beta+ gamma == 180 )
+			if((a+b)>c & (b+c)>a & (a+c)>b|| alfa > 0 & b > 0 & gamma > 0  || a > 0 & b >0 &  alfa > 0 || a > 0 & c >0 &  alfa > 0||a > 0 & c >0 &  alfa > 0 ||a > 0 & b >0 &  beta > 0 ||a > 0 & c >0 &  beta > 0 ||a > 0 & b >0 &  gamma > 0 ||  alfa + beta+ gamma == 180 )
 				{
 					return true;
 				}

@@ -127,9 +127,16 @@ que generen un triangulo
 
 				temp = ladoParcial / ratio;
 
-					anguloParcial = Math.toDegrees(Math.asin(temp));
-					anguloDesconocido = 180 - anguloConocido - anguloParcial;
-					ladoDesconocido = ratio * Math.sin(Math.toRadians(anguloDesconocido)); //ley de senos
+				anguloParcial = Math.toDegrees(Math.asin(temp));
+				anguloDesconocido = 180 - anguloConocido - anguloParcial;
+				ladoDesconocido = ratio * Math.sin(Math.toRadians(anguloDesconocido)); //ley de senos
+
+				if (A != 0 && alfa == 0) alfa = anguloParcial;
+				if (B != 0 && beta == 0) beta = anguloParcial;
+				if (C != 0 && gamma == 0) gamma = anguloParcial;
+				if (A == 0 && alfa == 0) { A = ladoDesconocido; alfa = anguloDesconocido; }
+				if (B == 0 && beta == 0) { B = ladoDesconocido; beta = anguloDesconocido; }
+				if (C == 0 && gamma == 0) { C = ladoDesconocido; gamma = anguloDesconocido; }
 
 				}
 
@@ -165,7 +172,6 @@ que generen un triangulo
 	*Aquí empieza la parte del texto
 	*================================================================================================================================================
 	*/
-
 
 	public static String pasoPorPaso(double A,double B,double C,double alfa,double beta,double gamma){
 
@@ -209,17 +215,17 @@ que generen un triangulo
 
 		if(alfa != 0){
 			numAngulos++;
-			aRegresar.append("\nTenemos el ángulo alfa = "+ alfa);
+			aRegresar.append("\nTenemos el Angulo alfa = "+ alfa);
 		}
 
 		if(beta != 0){
 			numAngulos++;
-			aRegresar.append("\nTenemos el ángulo beta = "+ beta);
+			aRegresar.append("\nTenemos el Angulo beta = "+ beta);
 		}
 
 		if(gamma != 0){
 			numAngulos++;
-			aRegresar.append("\nTenemos el ángulo gamma = "+ gamma);
+			aRegresar.append("\nTenemos el Angulo gamma = "+ gamma);
 		}
 
 		aRegresar.append("\n\n\nPROCEDIMIENTO:");
@@ -234,9 +240,9 @@ que generen un triangulo
 		if (numLados == 0){//caso 1: 3 angulos
 			//este metodo sirve con 3 o mas parametros
 
-			aRegresar.append("\n\nComo tenemos 3 ángulos, usaremos la ley de senos para determinar los ángulos restantes:");
+			aRegresar.append("\n\nComo tenemos 3 Angulos, usaremos la ley de senos para determinar los Angulos restantes:");
 			aRegresar.append("\nA/sen(alfa) = B/sen(beta) = C/sen(gamma)");
-			aRegresar.append("\n\nComo no tenemos el valor de ningún lado, asignaremos al lado A el valor de 1 para poder continuar.");
+			aRegresar.append("\n\nComo no tenemos el valor de ningun lado, asignaremos al lado A el valor de 1 para poder continuar.");
 			A = 1;
 
 			senA = Math.sin(Math.toRadians(alfa));
@@ -251,7 +257,7 @@ que generen un triangulo
 				ratio = A / senA;
 			}
 
-			//en teoría nunca llega a estos casos
+			//en teoria nunca llega a estos casos
 			if (B != 0) {ratio = B / senB;}
 			if (C != 0) {ratio = C / senC;}
 			if (A == 0) A = ratio * senA;
@@ -260,7 +266,7 @@ que generen un triangulo
 			if (B == 0){ 
 				aRegresar.append("\n\n------\nLADO B:\n------");
 
-				aRegresar.append("\n\nComo conocemos A, usaremos sólo una fracción de la ley de senos:");
+				aRegresar.append("\n\nComo conocemos A, usaremos solo una fraccion de la ley de senos:");
 				aRegresar.append("\nA/sen(alfa) = B/sen(beta)");
 
 				aRegresar.append("\n\nSi despejamos B: B = (A/sen(alfa)) * sen(beta)");
@@ -273,7 +279,7 @@ que generen un triangulo
 			if (C == 0){
 				aRegresar.append("\n\n------\nLADO C:\n------");
 
-				aRegresar.append("\n\nComo conocemos A, usaremos sólo una fracción de la ley de senos:");
+				aRegresar.append("\n\nComo conocemos A, usaremos solo una fraccion de la ley de senos:");
 				aRegresar.append("\nA/sen(alfa) = C/sen(gamma)");
 
 				aRegresar.append("\n\nSi despejamos C: C = (A/sen(alfa)) * sen(gamma)");
@@ -289,13 +295,13 @@ que generen un triangulo
 		else if (numAngulos == 2){//caso 2: 2 angulos, 1 lado
 			//este metodo sirve con 3 o mas parametros
 
-			aRegresar.append("\n\nPrimero calculamos el ángulo faltante:");
+			aRegresar.append("\n\nPrimero calculamos el Angulo faltante:");
 
 			if (alfa == 0) { 
 				aRegresar.append("\n\n------\nALFA:\n------");
 				alfa = 180 - beta - gamma; 
-				aRegresar.append("\n\nPara conocer el ángulo alfa, usamos simple álgebra:");
-				aRegresar.append("\nSabemos que los ángulos de un triángulo suman 180. Entonces alfa + beta + gamma = 180");
+				aRegresar.append("\n\nPara conocer el Angulo alfa, usamos simple Algebra:");
+				aRegresar.append("\nSabemos que los Angulos de un triAngulo suman 180. Entonces alfa + beta + gamma = 180");
 				aRegresar.append("\nPor lo tanto, alfa = 180 - beta - gamma");
 				aRegresar.append("\nSustituimos: alfa = 180 - "+beta+" - "+gamma);
 				aRegresar.append("\n\nalfa = "+alfa);
@@ -303,8 +309,8 @@ que generen un triangulo
 			if (beta == 0) { 
 				aRegresar.append("\n\n------\nBETA:\n------");
 				beta = 180 - gamma - alfa;
-				aRegresar.append("\n\nPara conocer el ángulo beta, usamos simple álgebra:");
-				aRegresar.append("\nSabemos que los ángulos de un triángulo suman 180. Entonces alfa + beta + gamma = 180");
+				aRegresar.append("\n\nPara conocer el Angulo beta, usamos simple Algebra:");
+				aRegresar.append("\nSabemos que los Angulos de un triAngulo suman 180. Entonces alfa + beta + gamma = 180");
 				aRegresar.append("\nPor lo tanto, beta = 180 - alfa - gamma");
 				aRegresar.append("\nSustituimos: alfa = 180 - "+alfa+" - "+gamma);
 				aRegresar.append("\n\nbeta = "+beta);				 
@@ -312,8 +318,8 @@ que generen un triangulo
 			if (gamma == 0) {
 				aRegresar.append("\n\n------\nGAMMA:\n------");
 				gamma = 180 - alfa - beta; 
-				aRegresar.append("\n\nPara conocer el ángulo gamma, usamos simple álgebra:");
-				aRegresar.append("\nSabemos que los ángulos de un triángulo suman 180. Entonces alfa + beta + gamma = 180");
+				aRegresar.append("\n\nPara conocer el Angulo gamma, usamos simple Algebra:");
+				aRegresar.append("\nSabemos que los Angulos de un triAngulo suman 180. Entonces alfa + beta + gamma = 180");
 				aRegresar.append("\nPor lo tanto, gamma = 180 - alfa - beta");
 				aRegresar.append("\nSustituimos: gamma = 180 - "+alfa+" - "+beta);
 				aRegresar.append("\n\ngamma = "+gamma);
@@ -371,16 +377,20 @@ que generen un triangulo
 
 				if (A == 0){
 					A = resuelveLado(B, C, alfa);
+					aRegresar.append(resuelveLadoString(B,C,alfa,"B","C","alfa","A"));
+					//public static String resuelveLadoString(double a, double b, double C, String Sa, String Sb, String Sc, String nomLado)
 				}
 				if (B == 0) {
 					B = resuelveLado(C, A, beta);
+					aRegresar.append(resuelveLadoString(C,A,beta,"C","A","beta","B"));
 				}
 				if (C == 0) {
 					C = resuelveLado(A, B, gamma);
+					aRegresar.append(resuelveLadoString(A,B,gamma,"A","B","gamma","C"));
 				}
 				if(alfa ==0){
-				//alfa = resuelveAngulo(B, C, A);
-				aRegresar.append(resuelveAnguloString(B, C, A,"A","B","C","alfa"));
+					//alfa = resuelveAngulo(B, C, A);
+					aRegresar.append(resuelveAnguloString(B, C, A,"A","B","C","alfa"));
 				}
 				if (beta == 0){
 					//beta = resuelveAngulo(C, A, B);
@@ -395,39 +405,116 @@ que generen un triangulo
 
 			} else {//caso 3.2: lado-lado-angulo
 
+				String ladoCS="", anguloCS="", ladoPS="", anguloPS=""; 
+
 				if (A != 0 && alfa != 0) { 
 					ladoConocido = A; 
 					anguloConocido = alfa; 
+
+					aRegresar.append("\n\nSabemos que contamos con el lado A y el angulo alfa");
+					ladoCS = "A";
+					anguloCS = "alfa";
 				}
 
 				if (B != 0 && beta != 0) { 
 					ladoConocido = B; 
 					anguloConocido = beta; 
+
+					aRegresar.append("\n\nSabemos que contamos con el lado B y el angulo beta");
+					ladoCS = "B";
+					anguloCS = "beta";
 				}
 
 				if (C != 0 && gamma != 0) { 
 					ladoConocido = C; 
 					anguloConocido = gamma; 
+
+					aRegresar.append("\n\nSabemos que contamos con el lado C y el angulo gamma");
+					ladoCS = "C";
+					anguloCS = "gamma";
 				}
 
-				if (A != 0 && alfa == 0){ ladoParcial = A;}
-				if (B != 0 && beta == 0){ ladoParcial = B;}
-				if (C != 0 && gamma == 0){ ladoParcial = C;}
+				if (A != 0 && alfa == 0){ 
+					ladoParcial = A;
+					ladoPS = "A";
+					aRegresar.append("\nY el lado que nos queda es A");
+				}
+				if (B != 0 && beta == 0){ 
+					ladoParcial = B;
+					ladoPS = "B";
+					aRegresar.append("\nY el lado que nos queda es B");
+				}
+				if (C != 0 && gamma == 0){ 
+					ladoParcial = C;
+					ladoPS = "B";
+					aRegresar.append("\nY el lado que nos queda es C");
+				}
 
 				ratio = ladoConocido / Math.sin(Math.toRadians(anguloConocido));
 
 				temp = ladoParcial / ratio;
 
+				aRegresar.append("\n\nEl primer angulo se calcula usando la ley de senos: "+ladoCS+" / sen("+anguloCS+")");
+
 				anguloParcial = Math.toDegrees(Math.asin(temp));
+
+				if (A != 0 && alfa == 0){
+					alfa = anguloParcial;
+					aRegresar.append("= A / sen(alfa)");
+					aRegresar.append("\nDespejamos alfa: alfa = sin^-1(("+ladoCS+"/"+anguloCS+")/A)");
+					aRegresar.append("\n\nalfa = "+alfa);
+				}
+				if (B != 0 && beta == 0){
+					beta = anguloParcial;
+					aRegresar.append("= B / sen(beta)");
+					aRegresar.append("\nDespejamos beta: beta = sin^-1(("+ladoCS+"/"+anguloCS+")/B)");
+					aRegresar.append("\n\nbeta = "+beta);
+				}
+				if (C != 0 && gamma == 0){
+					gamma = anguloParcial;
+					aRegresar.append("= C / sen(gamma)");
+					aRegresar.append("\nDespejamos gamma: gamma = sin^-1(("+ladoCS+"/"+anguloCS+")/C)");
+					aRegresar.append("\n\ngamma = "+gamma);
+				}
+
+
+				
 				anguloDesconocido = 180 - anguloConocido - anguloParcial;
+				aRegresar.append("\n\nEl ultimo angulo se calcula usando algebra: ");
 				ladoDesconocido = ratio * Math.sin(Math.toRadians(anguloDesconocido)); //ley de senos
+
+				
+				if (A == 0 && alfa == 0) { 
+					A = ladoDesconocido; 
+					alfa = anguloDesconocido; 
+
+					aRegresar.append("\nComo los lados internos de un triangulo suman 180\nalfa = 180 - "+anguloCS+" - "+anguloPS);
+					aRegresar.append("\n\nalfa = "+alfa);
+					aRegresar.append("\n\nFinalmente, para el ultimo lado A, usamos ley de senos de la misma manera que la habiamos usado\n\nA = "+A);
+				}
+				if (B == 0 && beta == 0) { 
+					B = ladoDesconocido; 
+					beta = anguloDesconocido; 
+
+					aRegresar.append("\nComo los lados internos de un triangulo suman 180\nbeta = 180 - "+anguloCS+" - "+anguloPS);
+					aRegresar.append("\n\nbeta = "+beta);
+					aRegresar.append("\n\nFinalmente, para el ultimo lado B, usamos ley de senos de la misma manera que la habiamos usado\n\nB = "+B);
+				}
+				if (C == 0 && gamma == 0) { 
+					C = ladoDesconocido; 
+					gamma = anguloDesconocido; 
+
+					aRegresar.append("\nComo los lados internos de un triangulo suman 180\ngamma = 180 - "+anguloCS+" - "+anguloPS);
+					aRegresar.append("\n\ngamma = "+gamma);
+					aRegresar.append("\n\nFinalmente, para el ultimo lado C, usamos ley de senos de la misma manera que la habiamos usado\n\nC = "+C);
+				}
 
 				}
 
 		} else if (numLados == 3){//caso 4: 3 lados
 
-			aRegresar.append("\n\nExisten 3 lados, entonces podemos utilizar la ley de cosenos para determinar los ángulos faltantes.");
-			aRegresar.append("\nUtilizamos diferentes formas de dicha ley para determinar cada ángulo:");
+			aRegresar.append("\n\nExisten 3 lados, entonces podemos utilizar la ley de cosenos para determinar los Angulos faltantes.");
+			aRegresar.append("\nUtilizamos diferentes formas de dicha ley para determinar cada Angulo:");
 
 			if(alfa ==0){
 				//alfa = resuelveAngulo(B, C, A);
@@ -449,13 +536,24 @@ que generen un triangulo
 
 	}
 
-	public static String resuelveLadoString(double a, double b, double C) {  
+	public static String resuelveLadoString(double a, double b, double C, String Sa, String Sb, String Sc, String nomLado) {  
 		// Regla de cosenos
 		StringBuffer regresaMetodo = new StringBuffer ();
-		regresaMetodo.append("Para resolver el lado usamos la ley de cosenos:");
+		regresaMetodo.append("\n\n------\nLADO "+nomLado+":\n------");
+		regresaMetodo.append("\nPara resolver el lado "+Sa+", usamos la ley de cosenos:");
+		regresaMetodo.append("\n"+Sa+"^2 = "+Sb+"^2 + "+Sc+"^2 - 2*"+Sb+"*"+Sc+" * cos("+regresaCorrespondiente(Sa)+")");
 
+		regresaMetodo.append("\n\nDespejamos "+Sa+": "+Sa+" = sqrt("+Sb+"^2 + "+Sc+"^2 - 2*"+Sb+"*"+Sc+" * cos("+regresaCorrespondiente(Sa)+"))");
+		regresaMetodo.append("\nSustituimos: "+Sa+" = sqrt("+(a * a)+" + " +(b * b)+" -2 * "+(a * b)+" * cos("+regresaCorrespondiente(Sa)+")");
+		regresaMetodo.append("\n\n"+Sa+" = " + Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(Math.toRadians(C))));
 
-		Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(Math.toRadians(C)));
+		/*regresaMetodo.append("\n\nDespejamos cos("+nomAngulo+"): ("+Sa+"^2 - "+Sb+"^2 - "+Sc+"^2) / - 2*"+Sb+"*"+Sc+"  = cos("+nomAngulo+")");
+		regresaMetodo.append("\nMultiplicaos la parte izquierda por (-1): -"+Sa+"^2 + "+Sb+"^2 + "+Sc+"^2) / 2*"+Sb+"*"+Sc+"  = cos("+nomAngulo+")");
+		regresaMetodo.append("\nUsamos coseno inverso para despejar "+nomAngulo+": cos^-1(-"+Sa+"^2 + "+Sb+"^2 + "+Sc+"^2) / 2*"+Sb+"*"+Sc+") = "+nomAngulo);
+
+		regresaMetodo.append("\n\nSustituimos: cos^-1((-"+c+"^2 + "+b+"^2 - "+a+"^2) / (2 * "+a+" * "+b+")) = "+nomAngulo);
+
+		regresaMetodo.append("\ncos^-1("+temp+") = "+nomAngulo);*/
 
 		return regresaMetodo.toString();
 	}
@@ -466,7 +564,7 @@ que generen un triangulo
 
 		regresaMetodo.append("\n\n------\nLADO "+ladoACalc+":\n------");
 
-		regresaMetodo.append("\n\nComo conocemos "+ladoCon+", usaremos sólo una fracción de la ley de senos:");
+		regresaMetodo.append("\n\nComo conocemos "+ladoCon+", usaremos solo una fraccion de la ley de senos:");
 		regresaMetodo.append("\n"+ladoCon+"/sen("+regresaCorrespondiente(ladoCon)+") = "+ladoACalc+"/sen("+regresaCorrespondiente(ladoACalc)+")");
 
 		regresaMetodo.append("\n\nSi despejamos "+ladoACalc+": "+ladoACalc+" = ("+ladoCon+"/sen("+regresaCorrespondiente(ladoCon)+")) * sen("+regresaCorrespondiente(ladoACalc)+")");
@@ -506,7 +604,7 @@ que generen un triangulo
 		StringBuffer regresaMetodo = new StringBuffer ();
 
 		regresaMetodo.append("\n\n------\n"+nomAngulo.toUpperCase()+":\n------");
-		regresaMetodo.append("\n\nPara resolver el angulo "+nomAngulo+", usamos esta forma de la ley de cosenos:");
+		regresaMetodo.append("\n\nPara resolver el &aacutengulo "+nomAngulo+", usamos esta forma de la ley de cosenos:");
 
 		regresaMetodo.append("\n"+Sa+"^2 = "+Sb+"^2 + "+Sc+"^2 - 2*"+Sb+"*"+Sc+" * cos("+nomAngulo+")");
 
@@ -527,11 +625,11 @@ que generen un triangulo
 			regresaMetodo.append("\n\n"+nomAngulo+" = "+res);
 		}
 		else if (temp < -1){
-			regresaMetodo.append("\n\nComo el valor "+temp+" es menor a -1, no puede ser evaluada por la función cos^-1.");
-			regresaMetodo.append("\nPor lo tanto, no existe solución para este ángulo");
+			regresaMetodo.append("\n\nComo el valor "+temp+" es menor a -1, no puede ser evaluada por la funcion cos^-1.");
+			regresaMetodo.append("\nPor lo tanto, no existe solucion para este Angulo");
 		} else {
-			regresaMetodo.append("\n\nComo el valor "+temp+" es mayor a 1, no puede ser evaluada por la función cos^-1.");
-			regresaMetodo.append("\nPor lo tanto, no existe solución para este ángulo");
+			regresaMetodo.append("\n\nComo el valor "+temp+" es mayor a 1, no puede ser evaluada por la funcion cos^-1.");
+			regresaMetodo.append("\nPor lo tanto, no existe solucion para este Angulo");
 
 		}
 
