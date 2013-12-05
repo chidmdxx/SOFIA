@@ -60,6 +60,25 @@
         android:layout_marginTop="44dp"
         android:text="@string/Step_by_step" />
 
+    <TextView
+        android:id="@+id/solver_Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/equation_graphicB"
+        android:layout_alignBottom="@+id/equation_graphicB"
+        android:layout_alignRight="@+id/ecuation_textField"
+        android:layout_marginRight="18dp"
+        android:text="@string/Blank_string"
+        android:textSize="@dimen/Titulo_size" />
+
+    <Button
+        android:id="@+id/equation_ResultB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/equation_graphicB"
+        android:layout_alignRight="@+id/ecuation_textField"
+        android:text="@string/Equation_solverB" />
+
 </RelativeLayout>
 
 </ScrollView>

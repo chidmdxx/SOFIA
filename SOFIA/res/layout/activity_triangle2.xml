@@ -42,7 +42,7 @@
         android:inputType="number" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/equation_ResultB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText3"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editText1"
         android:layout_alignBottom="@+id/editText1"
-        android:layout_toRightOf="@+id/button1"
+        android:layout_toRightOf="@+id/equation_ResultB"
         android:ems="10"
         android:inputType="number" />
 
@@ -76,12 +76,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editText3"
         android:layout_alignBottom="@+id/editText3"
-        android:layout_toRightOf="@+id/button1"
+        android:layout_toRightOf="@+id/equation_ResultB"
         android:ems="10"
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/solver_Result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/editText4"
@@ -94,14 +94,14 @@
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/solver_Result"
+        android:layout_alignBottom="@+id/solver_Result"
         android:layout_alignLeft="@+id/editText4"
         android:layout_marginLeft="19dp"
         android:text="@string/grados" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/equation_definicion1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editText1"
@@ -110,7 +110,7 @@
         android:text="@string/a" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/equation_definicion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editText2"
@@ -156,12 +156,12 @@
         android:text="@string/C" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/equation_menu_theoryB"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_alignBaseline="@+id/equation_ResultB"
+        android:layout_alignBottom="@+id/equation_ResultB"
         android:layout_alignParentLeft="true"
         android:text="@string/version2" 
         android:visibility="gone"/>
@@ -172,7 +172,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText3"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/equation_menu_theoryB"
         android:text="@string/version_1" 
         android:visibility="gone"/>
 
@@ -181,8 +181,8 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_alignBaseline="@+id/equation_ResultB"
+        android:layout_alignBottom="@+id/equation_ResultB"
         android:layout_alignLeft="@+id/textResult"
         android:text="@string/version1" />
 

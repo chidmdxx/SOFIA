@@ -254,15 +254,22 @@ public class EquationMethods {
 		
 	}
 	
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> cad387dd93a006c85040af2bfb44056881bae559
 	public String PasoaPaso (int x, int y, int z) {
         
 		
 		int a = x;
         int b = y;
         int c = z;
+<<<<<<< HEAD
         
+=======
+        /*
+>>>>>>> cad387dd93a006c85040af2bfb44056881bae559
         if(a==0 && b==0 && c==0){
 			String result = ("MAL ESCRITO");
 			return result;
